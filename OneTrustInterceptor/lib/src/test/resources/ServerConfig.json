@@ -1,0 +1,4217 @@
+{
+  "config": {
+    "statsCollection": {
+      "errorReports": {
+        "enabled": false
+      },
+      "metrics": {
+        "enabled": false
+      }
+    }
+  },
+  "liveEventsConfig": {
+  },
+  "id": "2KDT36Mbc8NtyJRcY1OJYNMyESU",
+  "name": "JS Prod",
+  "writeKey": "2KDT361Ms7fMlomDoi9t12aXtNX",
+  "enabled": true,
+  "sourceDefinitionId": "1TW48i2bIzEl1HPf825cEznfIM8",
+  "createdBy": "1vt95J8oQEYzCc8tOyVNQ5kMLlf",
+  "workspaceId": "1vt9Bg4Yne53AAjT0ExfN4N10Z6",
+  "deleted": false,
+  "transient": false,
+  "secretVersion": null,
+  "createdAt": "2023-01-12T07:19:11.083Z",
+  "updatedAt": "2023-01-12T07:19:11.083Z",
+  "connections": [
+    {
+      "id": "2KYA2VLx2x7aCqZcUpK2t5n4txB",
+      "sourceId": "2KDT36Mbc8NtyJRcY1OJYNMyESU",
+      "destinationId": "1z7xfZC2slTjIjvNMiZKix3p8qp",
+      "enabled": true,
+      "deleted": false,
+      "createdAt": "2023-01-19T15:08:55.030Z",
+      "updatedAt": "2023-01-19T15:08:55.030Z"
+    },
+    {
+      "id": "2KawPIw1k9EaEURHz9DiFJBvlaX",
+      "sourceId": "2KDT36Mbc8NtyJRcY1OJYNMyESU",
+      "destinationId": "2KawPBvasYylQCVK4TIpGxPP9WW",
+      "enabled": true,
+      "deleted": false,
+      "createdAt": "2023-01-20T14:46:15.769Z",
+      "updatedAt": "2023-01-20T14:46:15.769Z"
+    },
+    {
+      "id": "2Kb0udAtaRlIhkeQKNlczFSbeHz",
+      "sourceId": "2KDT36Mbc8NtyJRcY1OJYNMyESU",
+      "destinationId": "2Kb0uWtwcvl1mUv1IBc5a8YhuM6",
+      "enabled": true,
+      "deleted": false,
+      "createdAt": "2023-01-20T15:23:18.778Z",
+      "updatedAt": "2023-01-20T15:23:18.778Z"
+    },
+    {
+      "id": "2KX4Gbca72EtlqVrXnWvLKOvFw3",
+      "sourceId": "2KDT36Mbc8NtyJRcY1OJYNMyESU",
+      "destinationId": "2KX4GMCpQiCfjVoTwnF1ZsWaJlN",
+      "enabled": true,
+      "deleted": false,
+      "createdAt": "2023-01-19T05:51:38.482Z",
+      "updatedAt": "2023-01-19T05:51:38.482Z"
+    }
+  ],
+  "destinations": [
+    {
+      "secretConfig": {
+      },
+      "config": {
+        "apiKey": "7b2eeba65031adf95e088743415c8913",
+        "groupTypeTrait": "",
+        "groupValueTrait": "",
+        "trackAllPages": true,
+        "trackCategorizedPages": true,
+        "trackNamedPages": true,
+        "traitsToIncrement": [
+          {
+            "traits": ""
+          }
+        ],
+        "traitsToSetOnce": [
+          {
+            "traits": ""
+          }
+        ],
+        "traitsToAppend": [
+          {
+            "traits": ""
+          }
+        ],
+        "traitsToPrepend": [
+          {
+            "traits": ""
+          }
+        ],
+        "trackProductsOnce": true,
+        "trackRevenuePerProduct": true,
+        "preferAnonymousIdForDeviceId": false,
+        "deviceIdFromUrlParam": false,
+        "forceHttps": false,
+        "trackGclid": true,
+        "trackReferrer": true,
+        "saveParamsReferrerOncePerSession": true,
+        "trackUtmProperties": true,
+        "unsetParamsReferrerOnNewSession": false,
+        "batchEvents": false,
+        "eventUploadPeriodMillis": "30000",
+        "eventUploadThreshold": "30",
+        "versionName": "",
+        "blacklistedEvents": [
+          {
+            "eventName": ""
+          }
+        ],
+        "whitelistedEvents": [
+          {
+            "eventName": ""
+          }
+        ],
+        "oneTrustCookieCategories": [
+          {
+            "oneTrustCookieCategory": "cat_id_1"
+          },
+          {
+            "oneTrustCookieCategory": "cat_id_2"
+          }
+        ],
+        "eventFilteringOption": "disable",
+        "mapDeviceBrand": false
+      },
+      "liveEventsConfig": {
+        "eventDelivery": false,
+        "eventDeliveryTS": 1633516091978
+      },
+      "id": "1z7xfZC2slTjIjvNMiZKix3p8qp",
+      "name": "Rudder-Amplitude-iOS",
+      "enabled": true,
+      "destinationDefinitionId": "1QGzO4fWSyq3lsyFHf4eQAMDSr9",
+      "workspaceId": "1vt9Bg4Yne53AAjT0ExfN4N10Z6",
+      "deleted": false,
+      "createdAt": "2021-10-06T09:37:11.541Z",
+      "updatedAt": "2023-01-19T15:09:07.222Z",
+      "revisionId": "2KYA3yzHGHGsbKJI1nEsxPK3kBP",
+      "secretVersion": 3,
+      "transformations": [
+      ],
+      "destinationDefinition": {
+        "config": {
+          "destConfig": {
+            "ios": [
+              "eventUploadPeriodMillis",
+              "eventUploadThreshold",
+              "useNativeSDK",
+              "trackSessionEvents",
+              "useIdfaAsDeviceId"
+            ],
+            "web": [
+              "useNativeSDK",
+              "preferAnonymousIdForDeviceId",
+              "deviceIdFromUrlParam",
+              "forceHttps",
+              "trackGclid",
+              "trackReferrer",
+              "saveParamsReferrerOncePerSession",
+              "trackUtmProperties",
+              "unsetParamsReferrerOnNewSession",
+              "batchEvents",
+              "eventUploadPeriodMillis",
+              "eventUploadThreshold",
+              "oneTrustCookieCategories"
+            ],
+            "android": [
+              "eventUploadPeriodMillis",
+              "eventUploadThreshold",
+              "useNativeSDK",
+              "enableLocationListening",
+              "trackSessionEvents",
+              "useAdvertisingIdForDeviceId"
+            ],
+            "flutter": [
+              "eventUploadPeriodMillis",
+              "eventUploadThreshold",
+              "useNativeSDK",
+              "enableLocationListening",
+              "trackSessionEvents",
+              "useAdvertisingIdForDeviceId",
+              "useIdfaAsDeviceId"
+            ],
+            "reactnative": [
+              "eventUploadPeriodMillis",
+              "eventUploadThreshold",
+              "useNativeSDK",
+              "enableLocationListening",
+              "trackSessionEvents",
+              "useAdvertisingIdForDeviceId",
+              "useIdfaAsDeviceId"
+            ],
+            "defaultConfig": [
+              "apiKey",
+              "groupTypeTrait",
+              "groupValueTrait",
+              "trackAllPages",
+              "trackCategorizedPages",
+              "trackNamedPages",
+              "traitsToIncrement",
+              "traitsToSetOnce",
+              "traitsToAppend",
+              "traitsToPrepend",
+              "trackProductsOnce",
+              "trackRevenuePerProduct",
+              "versionName",
+              "apiSecret",
+              "residencyServer",
+              "blacklistedEvents",
+              "whitelistedEvents",
+              "eventFilteringOption",
+              "mapDeviceBrand"
+            ]
+          },
+          "secretKeys": [
+            "apiKey",
+            "apiSecret"
+          ],
+          "excludeKeys": [
+          ],
+          "includeKeys": [
+            "apiKey",
+            "groupTypeTrait",
+            "groupValueTrait",
+            "trackAllPages",
+            "trackCategorizedPages",
+            "trackNamedPages",
+            "traitsToIncrement",
+            "traitsToSetOnce",
+            "traitsToAppend",
+            "traitsToPrepend",
+            "trackProductsOnce",
+            "trackRevenuePerProduct",
+            "preferAnonymousIdForDeviceId",
+            "deviceIdFromUrlParam",
+            "forceHttps",
+            "trackGclid",
+            "trackReferrer",
+            "saveParamsReferrerOncePerSession",
+            "trackUtmProperties",
+            "unsetParamsReferrerOnNewSession",
+            "batchEvents",
+            "eventUploadPeriodMillis",
+            "eventUploadThreshold",
+            "versionName",
+            "enableLocationListening",
+            "useAdvertisingIdForDeviceId",
+            "trackSessionEvents",
+            "useIdfaAsDeviceId",
+            "blacklistedEvents",
+            "whitelistedEvents",
+            "oneTrustCookieCategories",
+            "eventFilteringOption",
+            "mapDeviceBrand"
+          ],
+          "transformAt": "processor",
+          "transformAtV1": "processor",
+          "supportedSourceTypes": [
+            "android",
+            "ios",
+            "web",
+            "unity",
+            "amp",
+            "cloud",
+            "warehouse",
+            "reactnative",
+            "flutter",
+            "cordova"
+          ],
+          "supportsVisualMapper": true,
+          "supportedMessageTypes": [
+            "alias",
+            "group",
+            "identify",
+            "page",
+            "screen",
+            "track"
+          ],
+          "saveDestinationResponse": true
+        },
+        "configSchema": {
+          "type": "object",
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "required": [
+            "apiKey"
+          ],
+          "properties": {
+            "apiKey": {
+              "type": "string",
+              "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{1,100})$"
+            },
+            "apiSecret": {
+              "type": "string",
+              "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+            },
+            "forceHttps": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "trackGclid": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "batchEvents": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "versionName": {
+              "type": "string",
+              "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+            },
+            "useNativeSDK": {
+              "type": "object",
+              "properties": {
+                "ios": {
+                  "type": "boolean"
+                },
+                "web": {
+                  "type": "boolean"
+                },
+                "android": {
+                  "type": "boolean"
+                },
+                "reactnative": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "trackAllPages": {
+              "type": "boolean"
+            },
+            "trackReferrer": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "groupTypeTrait": {
+              "type": "string",
+              "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+            },
+            "mapDeviceBrand": {
+              "type": "boolean"
+            },
+            "traitsToAppend": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "traits": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "groupValueTrait": {
+              "type": "string",
+              "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+            },
+            "residencyServer": {
+              "type": "string",
+              "pattern": "(^env[.].*)|^(standard|EU)$"
+            },
+            "trackNamedPages": {
+              "type": "boolean"
+            },
+            "traitsToPrepend": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "traits": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "traitsToSetOnce": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "traits": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "blacklistedEvents": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "eventName": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "trackProductsOnce": {
+              "type": "boolean"
+            },
+            "traitsToIncrement": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "traits": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "useIdfaAsDeviceId": {
+              "type": "object",
+              "properties": {
+                "ios": {
+                  "type": "boolean"
+                },
+                "reactnative": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "whitelistedEvents": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "eventName": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "trackSessionEvents": {
+              "type": "object",
+              "properties": {
+                "ios": {
+                  "type": "boolean"
+                },
+                "android": {
+                  "type": "boolean"
+                },
+                "reactnative": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "trackUtmProperties": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "deviceIdFromUrlParam": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "eventUploadThreshold": {
+              "type": "object",
+              "properties": {
+                "ios": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^([0-9]{0,100})$"
+                },
+                "web": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^([0-9]{0,100})$"
+                },
+                "android": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^([0-9]{0,100})$"
+                },
+                "reactnative": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^([0-9]{0,100})$"
+                }
+              }
+            },
+            "trackCategorizedPages": {
+              "type": "boolean"
+            },
+            "trackRevenuePerProduct": {
+              "type": "boolean"
+            },
+            "enableLocationListening": {
+              "type": "object",
+              "properties": {
+                "android": {
+                  "type": "boolean"
+                },
+                "reactnative": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "eventUploadPeriodMillis": {
+              "type": "object",
+              "properties": {
+                "ios": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^([0-9]{0,100})$"
+                },
+                "web": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^([0-9]{0,100})$"
+                },
+                "android": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^([0-9]{0,100})$"
+                },
+                "reactnative": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^([0-9]{0,100})$"
+                }
+              }
+            },
+            "oneTrustCookieCategories": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "oneTrustCookieCategory": {
+                        "type": "string",
+                        "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "useAdvertisingIdForDeviceId": {
+              "type": "object",
+              "properties": {
+                "android": {
+                  "type": "boolean"
+                },
+                "reactnative": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "preferAnonymousIdForDeviceId": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "unsetParamsReferrerOnNewSession": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "saveParamsReferrerOncePerSession": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "responseRules": null,
+        "options": null,
+        "uiConfig": [
+          {
+            "title": "Connection Settings",
+            "fields": [
+              {
+                "type": "textInput",
+                "label": "API Key",
+                "regex": "^(.{0,100})$",
+                "value": "apiKey",
+                "secret": true,
+                "required": true,
+                "placeholder": "e.g: bSjsdGYsOo9sjw23Shj",
+                "regexErrorMessage": "Invalid Api Key"
+              },
+              {
+                "type": "textInput",
+                "label": "API Secret Key Required for deletion of users",
+                "regex": "^(.{0,100})$",
+                "value": "apiSecret",
+                "secret": true,
+                "required": false,
+                "placeholder": "e.g: bSjsdGYsOo9sjw23Shj",
+                "regexErrorMessage": "Invalid Api Key"
+              },
+              {
+                "mode": "single",
+                "type": "singleSelect",
+                "label": "Residency Server",
+                "value": "residencyServer",
+                "options": [
+                  {
+                    "name": "Standard Server",
+                    "value": "standard"
+                  },
+                  {
+                    "name": "EU Residency Server",
+                    "value": "EU"
+                  }
+                ],
+                "defaultOption": {
+                  "name": "Standard Server",
+                  "value": "standard"
+                }
+              }
+            ]
+          },
+          {
+            "title": "Group Settings",
+            "fields": [
+              {
+                "type": "textInput",
+                "label": "Group Name Trait",
+                "regex": "^(.{0,100})$",
+                "value": "groupTypeTrait",
+                "required": false,
+                "placeholder": "e.g: company_id",
+                "regexErrorMessage": "Invalid Group Name Trait"
+              },
+              {
+                "type": "textInput",
+                "label": "Group Value Trait",
+                "regex": "^(.{0,100})$",
+                "value": "groupValueTrait",
+                "required": false,
+                "placeholder": "e.g: company_name",
+                "regexErrorMessage": "Invalid Group Name Trait"
+              }
+            ]
+          },
+          {
+            "title": "Track Pages",
+            "fields": [
+              {
+                "type": "checkbox",
+                "label": "Track all pages",
+                "value": "trackAllPages",
+                "default": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Track Categorized Pages",
+                "value": "trackCategorizedPages",
+                "default": true
+              },
+              {
+                "type": "checkbox",
+                "label": "Track Named Pages",
+                "value": "trackNamedPages",
+                "default": true
+              }
+            ],
+            "sectionNote": "(Note: These settings are only applicable for web and mobile device mode)"
+          },
+          {
+            "title": "Traits Settings",
+            "fields": [
+              {
+                "type": "dynamicCustomForm",
+                "label": "Traits to increment",
+                "value": "traitsToIncrement",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "label": "Trait",
+                    "regex": "^(.{0,100})$",
+                    "value": "traits",
+                    "required": false,
+                    "regexErrorMessage": "Invalid Traits"
+                  }
+                ]
+              },
+              {
+                "type": "dynamicCustomForm",
+                "label": "Traits to set once",
+                "value": "traitsToSetOnce",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "label": "Trait",
+                    "regex": "^(.{0,100})$",
+                    "value": "traits",
+                    "required": false,
+                    "regexErrorMessage": "Invalid Traits"
+                  }
+                ]
+              },
+              {
+                "type": "dynamicCustomForm",
+                "label": "Traits to Append",
+                "value": "traitsToAppend",
+                "footerNote": "Not applicable for web device mode integrations",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "label": "Traits",
+                    "regex": "^(.{0,100})$",
+                    "value": "traits",
+                    "required": false,
+                    "regexErrorMessage": "Invalid Traits"
+                  }
+                ]
+              },
+              {
+                "type": "dynamicCustomForm",
+                "label": "Traits to Prepend",
+                "value": "traitsToPrepend",
+                "footerNote": "Not applicable for web device mode integrations",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "label": "Traits",
+                    "regex": "^(.{0,100})$",
+                    "value": "traits",
+                    "required": false,
+                    "regexErrorMessage": "Invalid Traits"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Other Settings",
+            "fields": [
+              {
+                "type": "checkbox",
+                "label": "Track products once",
+                "value": "trackProductsOnce",
+                "default": false,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Track Revenue per product",
+                "value": "trackRevenuePerProduct",
+                "default": false,
+                "required": false
+              },
+              {
+                "type": "textInput",
+                "label": "Version Name",
+                "regex": "^(.{0,100})$",
+                "value": "versionName",
+                "secret": false,
+                "required": false,
+                "footerNote": "Applicable only for web device mode integrations",
+                "placeholder": "e.g: 1.12.3",
+                "regexErrorMessage": "Invalid Version Name"
+              },
+              {
+                "type": "checkbox",
+                "label": "Map device brand",
+                "value": "mapDeviceBrand",
+                "default": false,
+                "required": false
+              }
+            ]
+          },
+          {
+            "title": "Batching Events",
+            "fields": [
+              {
+                "type": "checkbox",
+                "label": "Batch Events",
+                "value": "batchEvents",
+                "default": false
+              },
+              {
+                "type": "textInput",
+                "label": "Event Upload Period Millis",
+                "regex": "^([0-9]{0,100})$",
+                "value": "eventUploadPeriodMillis",
+                "default": "30000",
+                "required": false,
+                "placeholder": "30000",
+                "regexErrorMessage": "Invalid Value"
+              },
+              {
+                "type": "textInput",
+                "label": "Event Upload Threshold",
+                "regex": "^([0-9]{0,100})$",
+                "value": "eventUploadThreshold",
+                "default": "30",
+                "required": false,
+                "placeholder": "30",
+                "regexErrorMessage": "Invalid Value"
+              }
+            ]
+          },
+          {
+            "title": "Native SDK",
+            "fields": [
+              {
+                "type": "checkbox",
+                "label": "Use device-mode to send events",
+                "value": "useNativeSDK",
+                "default": false,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Prefer Anonymous ID for Device ID",
+                "value": "preferAnonymousIdForDeviceId",
+                "default": false,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Set Device ID From URL Parameter amp_device_id",
+                "value": "deviceIdFromUrlParam",
+                "default": false,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Force HTTPS",
+                "value": "forceHttps",
+                "default": false,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Track GCLID",
+                "value": "trackGclid",
+                "default": true,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Track Referrer",
+                "value": "trackReferrer",
+                "default": true,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Save Referrer, URL Params, GCLID Once Per Session",
+                "value": "saveParamsReferrerOncePerSession",
+                "default": true,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Track UTM properties",
+                "value": "trackUtmProperties",
+                "default": true,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Unset Params Referrer On New Session",
+                "value": "unsetParamsReferrerOnNewSession",
+                "default": false,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Enable Location Listening",
+                "value": "enableLocationListening",
+                "default": false,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Track Session Events",
+                "value": "trackSessionEvents",
+                "default": false,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Use Advertising ID for Device ID",
+                "value": "useAdvertisingIdForDeviceId",
+                "default": false,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Use IDFA as device Id",
+                "value": "useIdfaAsDeviceId",
+                "default": false,
+                "required": false
+              }
+            ]
+          },
+          {
+            "title": "Client-side Events Filtering",
+            "fields": [
+              {
+                "type": "singleSelect",
+                "value": "eventFilteringOption",
+                "options": [
+                  {
+                    "name": "Disable",
+                    "value": "disable"
+                  },
+                  {
+                    "name": "Allowlist",
+                    "value": "whitelistedEvents"
+                  },
+                  {
+                    "name": "Denylist",
+                    "value": "blacklistedEvents"
+                  }
+                ],
+                "required": false,
+                "defaultOption": {
+                  "name": "Disable",
+                  "value": "disable"
+                }
+              },
+              {
+                "type": "dynamicCustomForm",
+                "label": "Allowlist",
+                "value": "whitelistedEvents",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "value": "eventName",
+                    "required": false,
+                    "placeholder": "e.g: Anonymous Page Visit"
+                  }
+                ]
+              },
+              {
+                "type": "dynamicCustomForm",
+                "label": "Denylist",
+                "value": "blacklistedEvents",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "value": "eventName",
+                    "required": false,
+                    "placeholder": "e.g: Credit Card Added"
+                  }
+                ]
+              }
+            ],
+            "sectionNote": "Applicable only for device-mode integrations. If enabled, it works only with either allowlisted or denylisted events"
+          },
+          {
+            "title": "Consent Settings",
+            "fields": [
+              {
+                "type": "dynamicCustomForm",
+                "label": "OneTrust Cookie Categories",
+                "value": "oneTrustCookieCategories",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "label": "Category Name/ID",
+                    "value": "oneTrustCookieCategory",
+                    "required": false,
+                    "placeholder": "Marketing"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "id": "1QGzO4fWSyq3lsyFHf4eQAMDSr9",
+        "name": "AM",
+        "displayName": "Amplitude",
+        "category": null,
+        "createdAt": "2019-09-02T08:08:05.613Z",
+        "updatedAt": "2023-01-12T06:37:57.469Z"
+      },
+      "areTransformationsConnected": false
+    },
+    {
+      "secretConfig": {
+      },
+      "config": {
+        "apiKey": "7b2eeba65031adf95e088743415c8913",
+        "groupTypeTrait": "",
+        "groupValueTrait": "",
+        "trackAllPages": true,
+        "trackCategorizedPages": true,
+        "trackNamedPages": true,
+        "traitsToIncrement": [
+          {
+            "traits": ""
+          }
+        ],
+        "traitsToSetOnce": [
+          {
+            "traits": ""
+          }
+        ],
+        "traitsToAppend": [
+          {
+            "traits": ""
+          }
+        ],
+        "traitsToPrepend": [
+          {
+            "traits": ""
+          }
+        ],
+        "trackProductsOnce": true,
+        "trackRevenuePerProduct": true,
+        "preferAnonymousIdForDeviceId": false,
+        "deviceIdFromUrlParam": false,
+        "forceHttps": false,
+        "trackGclid": true,
+        "trackReferrer": true,
+        "saveParamsReferrerOncePerSession": true,
+        "trackUtmProperties": true,
+        "unsetParamsReferrerOnNewSession": false,
+        "batchEvents": false,
+        "eventUploadPeriodMillis": "30000",
+        "eventUploadThreshold": "30",
+        "versionName": "",
+        "blacklistedEvents": [
+          {
+            "eventName": ""
+          }
+        ],
+        "whitelistedEvents": [
+          {
+            "eventName": ""
+          }
+        ],
+        "oneTrustCookieCategories": [
+          {
+            "oneTrustCookieCategory": "cat_name_3"
+          },
+          {
+            "oneTrustCookieCategory": "cat_id_2"
+          }
+        ],
+        "eventFilteringOption": "disable",
+        "mapDeviceBrand": false
+      },
+      "liveEventsConfig": {
+        "eventDelivery": false,
+        "eventDeliveryTS": 1633516091978
+      },
+      "id": "1z7xfZC2slTjIjvNMiZKix3p8qy",
+      "name": "Rudder-Amplitude-iOS",
+      "enabled": true,
+      "destinationDefinitionId": "1QGzO4fWSyq3lsyFHf4eQAMDSr9",
+      "workspaceId": "1vt9Bg4Yne53AAjT0ExfN4N10Z6",
+      "deleted": false,
+      "createdAt": "2021-10-06T09:37:11.541Z",
+      "updatedAt": "2023-01-19T15:09:07.222Z",
+      "revisionId": "2KYA3yzHGHGsbKJI1nEsxPK3kBP",
+      "secretVersion": 3,
+      "transformations": [
+      ],
+      "destinationDefinition": {
+        "config": {
+          "destConfig": {
+            "ios": [
+              "eventUploadPeriodMillis",
+              "eventUploadThreshold",
+              "useNativeSDK",
+              "trackSessionEvents",
+              "useIdfaAsDeviceId"
+            ],
+            "web": [
+              "useNativeSDK",
+              "preferAnonymousIdForDeviceId",
+              "deviceIdFromUrlParam",
+              "forceHttps",
+              "trackGclid",
+              "trackReferrer",
+              "saveParamsReferrerOncePerSession",
+              "trackUtmProperties",
+              "unsetParamsReferrerOnNewSession",
+              "batchEvents",
+              "eventUploadPeriodMillis",
+              "eventUploadThreshold",
+              "oneTrustCookieCategories"
+            ],
+            "android": [
+              "eventUploadPeriodMillis",
+              "eventUploadThreshold",
+              "useNativeSDK",
+              "enableLocationListening",
+              "trackSessionEvents",
+              "useAdvertisingIdForDeviceId"
+            ],
+            "flutter": [
+              "eventUploadPeriodMillis",
+              "eventUploadThreshold",
+              "useNativeSDK",
+              "enableLocationListening",
+              "trackSessionEvents",
+              "useAdvertisingIdForDeviceId",
+              "useIdfaAsDeviceId"
+            ],
+            "reactnative": [
+              "eventUploadPeriodMillis",
+              "eventUploadThreshold",
+              "useNativeSDK",
+              "enableLocationListening",
+              "trackSessionEvents",
+              "useAdvertisingIdForDeviceId",
+              "useIdfaAsDeviceId"
+            ],
+            "defaultConfig": [
+              "apiKey",
+              "groupTypeTrait",
+              "groupValueTrait",
+              "trackAllPages",
+              "trackCategorizedPages",
+              "trackNamedPages",
+              "traitsToIncrement",
+              "traitsToSetOnce",
+              "traitsToAppend",
+              "traitsToPrepend",
+              "trackProductsOnce",
+              "trackRevenuePerProduct",
+              "versionName",
+              "apiSecret",
+              "residencyServer",
+              "blacklistedEvents",
+              "whitelistedEvents",
+              "eventFilteringOption",
+              "mapDeviceBrand"
+            ]
+          },
+          "secretKeys": [
+            "apiKey",
+            "apiSecret"
+          ],
+          "excludeKeys": [
+          ],
+          "includeKeys": [
+            "apiKey",
+            "groupTypeTrait",
+            "groupValueTrait",
+            "trackAllPages",
+            "trackCategorizedPages",
+            "trackNamedPages",
+            "traitsToIncrement",
+            "traitsToSetOnce",
+            "traitsToAppend",
+            "traitsToPrepend",
+            "trackProductsOnce",
+            "trackRevenuePerProduct",
+            "preferAnonymousIdForDeviceId",
+            "deviceIdFromUrlParam",
+            "forceHttps",
+            "trackGclid",
+            "trackReferrer",
+            "saveParamsReferrerOncePerSession",
+            "trackUtmProperties",
+            "unsetParamsReferrerOnNewSession",
+            "batchEvents",
+            "eventUploadPeriodMillis",
+            "eventUploadThreshold",
+            "versionName",
+            "enableLocationListening",
+            "useAdvertisingIdForDeviceId",
+            "trackSessionEvents",
+            "useIdfaAsDeviceId",
+            "blacklistedEvents",
+            "whitelistedEvents",
+            "oneTrustCookieCategories",
+            "eventFilteringOption",
+            "mapDeviceBrand"
+          ],
+          "transformAt": "processor",
+          "transformAtV1": "processor",
+          "supportedSourceTypes": [
+            "android",
+            "ios",
+            "web",
+            "unity",
+            "amp",
+            "cloud",
+            "warehouse",
+            "reactnative",
+            "flutter",
+            "cordova"
+          ],
+          "supportsVisualMapper": true,
+          "supportedMessageTypes": [
+            "alias",
+            "group",
+            "identify",
+            "page",
+            "screen",
+            "track"
+          ],
+          "saveDestinationResponse": true
+        },
+        "configSchema": {
+          "type": "object",
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "required": [
+            "apiKey"
+          ],
+          "properties": {
+            "apiKey": {
+              "type": "string",
+              "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{1,100})$"
+            },
+            "apiSecret": {
+              "type": "string",
+              "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+            },
+            "forceHttps": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "trackGclid": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "batchEvents": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "versionName": {
+              "type": "string",
+              "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+            },
+            "useNativeSDK": {
+              "type": "object",
+              "properties": {
+                "ios": {
+                  "type": "boolean"
+                },
+                "web": {
+                  "type": "boolean"
+                },
+                "android": {
+                  "type": "boolean"
+                },
+                "reactnative": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "trackAllPages": {
+              "type": "boolean"
+            },
+            "trackReferrer": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "groupTypeTrait": {
+              "type": "string",
+              "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+            },
+            "mapDeviceBrand": {
+              "type": "boolean"
+            },
+            "traitsToAppend": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "traits": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "groupValueTrait": {
+              "type": "string",
+              "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+            },
+            "residencyServer": {
+              "type": "string",
+              "pattern": "(^env[.].*)|^(standard|EU)$"
+            },
+            "trackNamedPages": {
+              "type": "boolean"
+            },
+            "traitsToPrepend": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "traits": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "traitsToSetOnce": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "traits": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "blacklistedEvents": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "eventName": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "trackProductsOnce": {
+              "type": "boolean"
+            },
+            "traitsToIncrement": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "traits": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "useIdfaAsDeviceId": {
+              "type": "object",
+              "properties": {
+                "ios": {
+                  "type": "boolean"
+                },
+                "reactnative": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "whitelistedEvents": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "eventName": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "trackSessionEvents": {
+              "type": "object",
+              "properties": {
+                "ios": {
+                  "type": "boolean"
+                },
+                "android": {
+                  "type": "boolean"
+                },
+                "reactnative": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "trackUtmProperties": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "deviceIdFromUrlParam": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "eventUploadThreshold": {
+              "type": "object",
+              "properties": {
+                "ios": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^([0-9]{0,100})$"
+                },
+                "web": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^([0-9]{0,100})$"
+                },
+                "android": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^([0-9]{0,100})$"
+                },
+                "reactnative": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^([0-9]{0,100})$"
+                }
+              }
+            },
+            "trackCategorizedPages": {
+              "type": "boolean"
+            },
+            "trackRevenuePerProduct": {
+              "type": "boolean"
+            },
+            "enableLocationListening": {
+              "type": "object",
+              "properties": {
+                "android": {
+                  "type": "boolean"
+                },
+                "reactnative": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "eventUploadPeriodMillis": {
+              "type": "object",
+              "properties": {
+                "ios": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^([0-9]{0,100})$"
+                },
+                "web": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^([0-9]{0,100})$"
+                },
+                "android": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^([0-9]{0,100})$"
+                },
+                "reactnative": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^([0-9]{0,100})$"
+                }
+              }
+            },
+            "oneTrustCookieCategories": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "oneTrustCookieCategory": {
+                        "type": "string",
+                        "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "useAdvertisingIdForDeviceId": {
+              "type": "object",
+              "properties": {
+                "android": {
+                  "type": "boolean"
+                },
+                "reactnative": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "preferAnonymousIdForDeviceId": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "unsetParamsReferrerOnNewSession": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "saveParamsReferrerOncePerSession": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        },
+        "responseRules": null,
+        "options": null,
+        "uiConfig": [
+          {
+            "title": "Connection Settings",
+            "fields": [
+              {
+                "type": "textInput",
+                "label": "API Key",
+                "regex": "^(.{0,100})$",
+                "value": "apiKey",
+                "secret": true,
+                "required": true,
+                "placeholder": "e.g: bSjsdGYsOo9sjw23Shj",
+                "regexErrorMessage": "Invalid Api Key"
+              },
+              {
+                "type": "textInput",
+                "label": "API Secret Key Required for deletion of users",
+                "regex": "^(.{0,100})$",
+                "value": "apiSecret",
+                "secret": true,
+                "required": false,
+                "placeholder": "e.g: bSjsdGYsOo9sjw23Shj",
+                "regexErrorMessage": "Invalid Api Key"
+              },
+              {
+                "mode": "single",
+                "type": "singleSelect",
+                "label": "Residency Server",
+                "value": "residencyServer",
+                "options": [
+                  {
+                    "name": "Standard Server",
+                    "value": "standard"
+                  },
+                  {
+                    "name": "EU Residency Server",
+                    "value": "EU"
+                  }
+                ],
+                "defaultOption": {
+                  "name": "Standard Server",
+                  "value": "standard"
+                }
+              }
+            ]
+          },
+          {
+            "title": "Group Settings",
+            "fields": [
+              {
+                "type": "textInput",
+                "label": "Group Name Trait",
+                "regex": "^(.{0,100})$",
+                "value": "groupTypeTrait",
+                "required": false,
+                "placeholder": "e.g: company_id",
+                "regexErrorMessage": "Invalid Group Name Trait"
+              },
+              {
+                "type": "textInput",
+                "label": "Group Value Trait",
+                "regex": "^(.{0,100})$",
+                "value": "groupValueTrait",
+                "required": false,
+                "placeholder": "e.g: company_name",
+                "regexErrorMessage": "Invalid Group Name Trait"
+              }
+            ]
+          },
+          {
+            "title": "Track Pages",
+            "fields": [
+              {
+                "type": "checkbox",
+                "label": "Track all pages",
+                "value": "trackAllPages",
+                "default": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Track Categorized Pages",
+                "value": "trackCategorizedPages",
+                "default": true
+              },
+              {
+                "type": "checkbox",
+                "label": "Track Named Pages",
+                "value": "trackNamedPages",
+                "default": true
+              }
+            ],
+            "sectionNote": "(Note: These settings are only applicable for web and mobile device mode)"
+          },
+          {
+            "title": "Traits Settings",
+            "fields": [
+              {
+                "type": "dynamicCustomForm",
+                "label": "Traits to increment",
+                "value": "traitsToIncrement",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "label": "Trait",
+                    "regex": "^(.{0,100})$",
+                    "value": "traits",
+                    "required": false,
+                    "regexErrorMessage": "Invalid Traits"
+                  }
+                ]
+              },
+              {
+                "type": "dynamicCustomForm",
+                "label": "Traits to set once",
+                "value": "traitsToSetOnce",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "label": "Trait",
+                    "regex": "^(.{0,100})$",
+                    "value": "traits",
+                    "required": false,
+                    "regexErrorMessage": "Invalid Traits"
+                  }
+                ]
+              },
+              {
+                "type": "dynamicCustomForm",
+                "label": "Traits to Append",
+                "value": "traitsToAppend",
+                "footerNote": "Not applicable for web device mode integrations",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "label": "Traits",
+                    "regex": "^(.{0,100})$",
+                    "value": "traits",
+                    "required": false,
+                    "regexErrorMessage": "Invalid Traits"
+                  }
+                ]
+              },
+              {
+                "type": "dynamicCustomForm",
+                "label": "Traits to Prepend",
+                "value": "traitsToPrepend",
+                "footerNote": "Not applicable for web device mode integrations",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "label": "Traits",
+                    "regex": "^(.{0,100})$",
+                    "value": "traits",
+                    "required": false,
+                    "regexErrorMessage": "Invalid Traits"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Other Settings",
+            "fields": [
+              {
+                "type": "checkbox",
+                "label": "Track products once",
+                "value": "trackProductsOnce",
+                "default": false,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Track Revenue per product",
+                "value": "trackRevenuePerProduct",
+                "default": false,
+                "required": false
+              },
+              {
+                "type": "textInput",
+                "label": "Version Name",
+                "regex": "^(.{0,100})$",
+                "value": "versionName",
+                "secret": false,
+                "required": false,
+                "footerNote": "Applicable only for web device mode integrations",
+                "placeholder": "e.g: 1.12.3",
+                "regexErrorMessage": "Invalid Version Name"
+              },
+              {
+                "type": "checkbox",
+                "label": "Map device brand",
+                "value": "mapDeviceBrand",
+                "default": false,
+                "required": false
+              }
+            ]
+          },
+          {
+            "title": "Batching Events",
+            "fields": [
+              {
+                "type": "checkbox",
+                "label": "Batch Events",
+                "value": "batchEvents",
+                "default": false
+              },
+              {
+                "type": "textInput",
+                "label": "Event Upload Period Millis",
+                "regex": "^([0-9]{0,100})$",
+                "value": "eventUploadPeriodMillis",
+                "default": "30000",
+                "required": false,
+                "placeholder": "30000",
+                "regexErrorMessage": "Invalid Value"
+              },
+              {
+                "type": "textInput",
+                "label": "Event Upload Threshold",
+                "regex": "^([0-9]{0,100})$",
+                "value": "eventUploadThreshold",
+                "default": "30",
+                "required": false,
+                "placeholder": "30",
+                "regexErrorMessage": "Invalid Value"
+              }
+            ]
+          },
+          {
+            "title": "Native SDK",
+            "fields": [
+              {
+                "type": "checkbox",
+                "label": "Use device-mode to send events",
+                "value": "useNativeSDK",
+                "default": false,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Prefer Anonymous ID for Device ID",
+                "value": "preferAnonymousIdForDeviceId",
+                "default": false,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Set Device ID From URL Parameter amp_device_id",
+                "value": "deviceIdFromUrlParam",
+                "default": false,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Force HTTPS",
+                "value": "forceHttps",
+                "default": false,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Track GCLID",
+                "value": "trackGclid",
+                "default": true,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Track Referrer",
+                "value": "trackReferrer",
+                "default": true,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Save Referrer, URL Params, GCLID Once Per Session",
+                "value": "saveParamsReferrerOncePerSession",
+                "default": true,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Track UTM properties",
+                "value": "trackUtmProperties",
+                "default": true,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Unset Params Referrer On New Session",
+                "value": "unsetParamsReferrerOnNewSession",
+                "default": false,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Enable Location Listening",
+                "value": "enableLocationListening",
+                "default": false,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Track Session Events",
+                "value": "trackSessionEvents",
+                "default": false,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Use Advertising ID for Device ID",
+                "value": "useAdvertisingIdForDeviceId",
+                "default": false,
+                "required": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Use IDFA as device Id",
+                "value": "useIdfaAsDeviceId",
+                "default": false,
+                "required": false
+              }
+            ]
+          },
+          {
+            "title": "Client-side Events Filtering",
+            "fields": [
+              {
+                "type": "singleSelect",
+                "value": "eventFilteringOption",
+                "options": [
+                  {
+                    "name": "Disable",
+                    "value": "disable"
+                  },
+                  {
+                    "name": "Allowlist",
+                    "value": "whitelistedEvents"
+                  },
+                  {
+                    "name": "Denylist",
+                    "value": "blacklistedEvents"
+                  }
+                ],
+                "required": false,
+                "defaultOption": {
+                  "name": "Disable",
+                  "value": "disable"
+                }
+              },
+              {
+                "type": "dynamicCustomForm",
+                "label": "Allowlist",
+                "value": "whitelistedEvents",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "value": "eventName",
+                    "required": false,
+                    "placeholder": "e.g: Anonymous Page Visit"
+                  }
+                ]
+              },
+              {
+                "type": "dynamicCustomForm",
+                "label": "Denylist",
+                "value": "blacklistedEvents",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "value": "eventName",
+                    "required": false,
+                    "placeholder": "e.g: Credit Card Added"
+                  }
+                ]
+              }
+            ],
+            "sectionNote": "Applicable only for device-mode integrations. If enabled, it works only with either allowlisted or denylisted events"
+          },
+          {
+            "title": "Consent Settings",
+            "fields": [
+              {
+                "type": "dynamicCustomForm",
+                "label": "OneTrust Cookie Categories",
+                "value": "oneTrustCookieCategories",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "label": "Category Name/ID",
+                    "value": "oneTrustCookieCategory",
+                    "required": false,
+                    "placeholder": "Marketing"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "id": "1QGzO4fWSyq3lsyFHf4eQAMDSr9",
+        "name": "RS",
+        "displayName": "Rocksalt",
+        "category": null,
+        "createdAt": "2019-09-02T08:08:05.613Z",
+        "updatedAt": "2023-01-12T06:37:57.469Z"
+      },
+      "areTransformationsConnected": false
+    },
+    {
+      "secretConfig": {
+      },
+      "config": {
+        "advId": "ASWERHFJDDFJHDHDHDHD",
+        "pixId": "AJHDJHDJDHHDJJD",
+        "blacklistedEvents": [
+          {
+            "eventName": ""
+          }
+        ],
+        "whitelistedEvents": [
+          {
+            "eventName": ""
+          }
+        ],
+        "oneTrustCookieCategories": [
+          {
+            "oneTrustCookieCategory": "cat_name_3"
+          },
+          {
+            "oneTrustCookieCategory": "cat_name_4"
+          }
+        ],
+        "eventFilteringOption": "disable"
+      },
+      "liveEventsConfig": {
+      },
+      "id": "2KawPBvasYylQCVK4TIpGxPP9WW",
+      "name": "Adroll Prod",
+      "enabled": true,
+      "destinationDefinitionId": "291BvjSWjurfw3c5MlPlVZw14xN",
+      "workspaceId": "1vt9Bg4Yne53AAjT0ExfN4N10Z6",
+      "deleted": false,
+      "createdAt": "2023-01-20T14:46:14.086Z",
+      "updatedAt": "2023-01-20T14:46:14.086Z",
+      "revisionId": "2KawPDBIha0s1ZNiqdDkzcnS2MM",
+      "secretVersion": 1,
+      "transformations": [
+      ],
+      "destinationDefinition": {
+        "config": {
+          "destConfig": {
+            "web": [
+              "useNativeSDK",
+              "oneTrustCookieCategories"
+            ],
+            "defaultConfig": [
+              "advId",
+              "pixId",
+              "eventsMap",
+              "blacklistedEvents",
+              "whitelistedEvents",
+              "eventFilteringOption"
+            ]
+          },
+          "secretKeys": [
+          ],
+          "excludeKeys": [
+          ],
+          "includeKeys": [
+            "advId",
+            "pixId",
+            "eventsMap",
+            "blacklistedEvents",
+            "whitelistedEvents",
+            "oneTrustCookieCategories",
+            "eventFilteringOption"
+          ],
+          "transformAt": "processor",
+          "transformAtV1": "processor",
+          "supportedSourceTypes": [
+            "web"
+          ],
+          "supportedMessageTypes": [
+            "identify",
+            "track",
+            "page"
+          ],
+          "saveDestinationResponse": true
+        },
+        "configSchema": {
+          "type": "object",
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "required": [
+            "advId",
+            "pixId"
+          ],
+          "properties": {
+            "advId": {
+              "type": "string",
+              "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{1,100})$"
+            },
+            "pixId": {
+              "type": "string",
+              "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{1,100})$"
+            },
+            "useNativeSDK": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "blacklistedEvents": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "eventName": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "whitelistedEvents": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "eventName": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "eventFilteringOption": {
+              "type": "string",
+              "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(disable|whitelistedEvents|blacklistedEvents)$"
+            },
+            "oneTrustCookieCategories": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "oneTrustCookieCategory": {
+                        "type": "string",
+                        "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responseRules": {
+        },
+        "options": {
+          "isBeta": true
+        },
+        "uiConfig": [
+          {
+            "title": "Connection Settings",
+            "fields": [
+              {
+                "type": "textInput",
+                "label": "Advertiser Id",
+                "regex": "^(.{0,100})$",
+                "value": "advId",
+                "required": true,
+                "placeholder": "e.g: ARWUQ4I1URC5LEKPVWXFA3",
+                "regexErrorMessage": "Invalid Advertiser Id"
+              },
+              {
+                "type": "textInput",
+                "label": "Pixel Id",
+                "regex": "^(.{0,100})$",
+                "value": "pixId",
+                "required": true,
+                "placeholder": "e.g: 4US1SZNV1QBPZHJKV3XS2X",
+                "regexErrorMessage": "Invalid Pixel Id"
+              },
+              {
+                "type": "dynamicForm",
+                "label": "Mapping to trigger the AdRoll Segment ID for the respective Eventname ",
+                "value": "eventsMap",
+                "keyLeft": "from",
+                "keyRight": "to",
+                "labelLeft": "Event Name",
+                "labelRight": "Segment Id",
+                "placeholderLeft": "e.g: Sign up completed",
+                "placeholderRight": "e.g: 3199304k"
+              }
+            ]
+          },
+          {
+            "title": "Native SDK",
+            "fields": [
+              {
+                "type": "defaultCheckbox",
+                "label": "Use device-mode to send events",
+                "value": "useNativeSDK",
+                "default": true
+              }
+            ]
+          },
+          {
+            "title": "Client-side Events Filtering",
+            "fields": [
+              {
+                "type": "singleSelect",
+                "value": "eventFilteringOption",
+                "options": [
+                  {
+                    "name": "Disable",
+                    "value": "disable"
+                  },
+                  {
+                    "name": "Allowlist",
+                    "value": "whitelistedEvents"
+                  },
+                  {
+                    "name": "Denylist",
+                    "value": "blacklistedEvents"
+                  }
+                ],
+                "required": false,
+                "defaultOption": {
+                  "name": "Disable",
+                  "value": "disable"
+                }
+              },
+              {
+                "type": "dynamicCustomForm",
+                "label": "Allowlist",
+                "value": "whitelistedEvents",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "value": "eventName",
+                    "required": false,
+                    "placeholder": "e.g: Anonymous Page Visit"
+                  }
+                ]
+              },
+              {
+                "type": "dynamicCustomForm",
+                "label": "Denylist",
+                "value": "blacklistedEvents",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "value": "eventName",
+                    "required": false,
+                    "placeholder": "e.g: Credit Card Added"
+                  }
+                ]
+              }
+            ],
+            "sectionNote": "Applicable only for device-mode integrations. If enabled, it works only with either allowlisted or denylisted events"
+          },
+          {
+            "title": "Consent Settings",
+            "fields": [
+              {
+                "type": "dynamicCustomForm",
+                "label": "OneTrust Cookie Categories",
+                "value": "oneTrustCookieCategories",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "label": "Category Name/ID",
+                    "value": "oneTrustCookieCategory",
+                    "required": false,
+                    "placeholder": "Marketing"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "id": "291BvjSWjurfw3c5MlPlVZw14xN",
+        "name": "ADROLL",
+        "displayName": "Adroll",
+        "category": null,
+        "createdAt": "2022-05-11T12:09:03.962Z",
+        "updatedAt": "2023-01-12T06:37:06.475Z"
+      },
+      "areTransformationsConnected": false
+    },
+    {
+      "secretConfig": {
+      },
+      "config": {
+        "advId": "ASWERHFJDDFJHDHDHDHD",
+        "pixId": "AJHDJHDJDHHDJJD",
+        "blacklistedEvents": [
+          {
+            "eventName": ""
+          }
+        ],
+        "whitelistedEvents": [
+          {
+            "eventName": ""
+          }
+        ],
+        "oneTrustCookieCategories": [
+          {
+            "oneTrustCookieCategory": ""
+          },
+          {
+            "oneTrustCookieCategory": "cat_name_1"
+          }
+        ],
+        "eventFilteringOption": "disable"
+      },
+      "liveEventsConfig": {
+      },
+      "id": "2KawPBvasYylQCVK4TIpGxPP9WM",
+      "name": "CreamRoll Prod",
+      "enabled": true,
+      "destinationDefinitionId": "291BvjSWjurfw3c5MlPlVZw14xN",
+      "workspaceId": "1vt9Bg4Yne53AAjT0ExfN4N10Z6",
+      "deleted": false,
+      "createdAt": "2023-01-20T14:46:14.086Z",
+      "updatedAt": "2023-01-20T14:46:14.086Z",
+      "revisionId": "2KawPDBIha0s1ZNiqdDkzcnS2MM",
+      "secretVersion": 1,
+      "transformations": [
+      ],
+      "destinationDefinition": {
+        "config": {
+          "destConfig": {
+            "web": [
+              "useNativeSDK",
+              "oneTrustCookieCategories"
+            ],
+            "defaultConfig": [
+              "advId",
+              "pixId",
+              "eventsMap",
+              "blacklistedEvents",
+              "whitelistedEvents",
+              "eventFilteringOption"
+            ]
+          },
+          "secretKeys": [
+          ],
+          "excludeKeys": [
+          ],
+          "includeKeys": [
+            "advId",
+            "pixId",
+            "eventsMap",
+            "blacklistedEvents",
+            "whitelistedEvents",
+            "oneTrustCookieCategories",
+            "eventFilteringOption"
+          ],
+          "transformAt": "processor",
+          "transformAtV1": "processor",
+          "supportedSourceTypes": [
+            "web"
+          ],
+          "supportedMessageTypes": [
+            "identify",
+            "track",
+            "page"
+          ],
+          "saveDestinationResponse": true
+        },
+        "configSchema": {
+          "type": "object",
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "required": [
+            "advId",
+            "pixId"
+          ],
+          "properties": {
+            "advId": {
+              "type": "string",
+              "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{1,100})$"
+            },
+            "pixId": {
+              "type": "string",
+              "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{1,100})$"
+            },
+            "useNativeSDK": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "blacklistedEvents": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "eventName": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "whitelistedEvents": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "eventName": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "eventFilteringOption": {
+              "type": "string",
+              "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(disable|whitelistedEvents|blacklistedEvents)$"
+            },
+            "oneTrustCookieCategories": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "oneTrustCookieCategory": {
+                        "type": "string",
+                        "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responseRules": {
+        },
+        "options": {
+          "isBeta": true
+        },
+        "uiConfig": [
+          {
+            "title": "Connection Settings",
+            "fields": [
+              {
+                "type": "textInput",
+                "label": "Advertiser Id",
+                "regex": "^(.{0,100})$",
+                "value": "advId",
+                "required": true,
+                "placeholder": "e.g: ARWUQ4I1URC5LEKPVWXFA3",
+                "regexErrorMessage": "Invalid Advertiser Id"
+              },
+              {
+                "type": "textInput",
+                "label": "Pixel Id",
+                "regex": "^(.{0,100})$",
+                "value": "pixId",
+                "required": true,
+                "placeholder": "e.g: 4US1SZNV1QBPZHJKV3XS2X",
+                "regexErrorMessage": "Invalid Pixel Id"
+              },
+              {
+                "type": "dynamicForm",
+                "label": "Mapping to trigger the AdRoll Segment ID for the respective Eventname ",
+                "value": "eventsMap",
+                "keyLeft": "from",
+                "keyRight": "to",
+                "labelLeft": "Event Name",
+                "labelRight": "Segment Id",
+                "placeholderLeft": "e.g: Sign up completed",
+                "placeholderRight": "e.g: 3199304k"
+              }
+            ]
+          },
+          {
+            "title": "Native SDK",
+            "fields": [
+              {
+                "type": "defaultCheckbox",
+                "label": "Use device-mode to send events",
+                "value": "useNativeSDK",
+                "default": true
+              }
+            ]
+          },
+          {
+            "title": "Client-side Events Filtering",
+            "fields": [
+              {
+                "type": "singleSelect",
+                "value": "eventFilteringOption",
+                "options": [
+                  {
+                    "name": "Disable",
+                    "value": "disable"
+                  },
+                  {
+                    "name": "Allowlist",
+                    "value": "whitelistedEvents"
+                  },
+                  {
+                    "name": "Denylist",
+                    "value": "blacklistedEvents"
+                  }
+                ],
+                "required": false,
+                "defaultOption": {
+                  "name": "Disable",
+                  "value": "disable"
+                }
+              },
+              {
+                "type": "dynamicCustomForm",
+                "label": "Allowlist",
+                "value": "whitelistedEvents",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "value": "eventName",
+                    "required": false,
+                    "placeholder": "e.g: Anonymous Page Visit"
+                  }
+                ]
+              },
+              {
+                "type": "dynamicCustomForm",
+                "label": "Denylist",
+                "value": "blacklistedEvents",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "value": "eventName",
+                    "required": false,
+                    "placeholder": "e.g: Credit Card Added"
+                  }
+                ]
+              }
+            ],
+            "sectionNote": "Applicable only for device-mode integrations. If enabled, it works only with either allowlisted or denylisted events"
+          },
+          {
+            "title": "Consent Settings",
+            "fields": [
+              {
+                "type": "dynamicCustomForm",
+                "label": "OneTrust Cookie Categories",
+                "value": "oneTrustCookieCategories",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "label": "Category Name/ID",
+                    "value": "oneTrustCookieCategory",
+                    "required": false,
+                    "placeholder": "Marketing"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "id": "291BvjSWjurfw3c5MlPlVZw14xN",
+        "name": "CR",
+        "displayName": "CreamRoll",
+        "category": null,
+        "createdAt": "2022-05-11T12:09:03.962Z",
+        "updatedAt": "2023-01-12T06:37:06.475Z"
+      },
+      "areTransformationsConnected": false
+    },
+    {
+      "secretConfig": {
+      },
+      "config": {
+        "accountId": "81234",
+        "blacklistedEvents": [
+          {
+            "eventName": ""
+          }
+        ],
+        "whitelistedEvents": [
+          {
+            "eventName": ""
+          }
+        ],
+        "oneTrustCookieCategories": [
+          {
+            "oneTrustCookieCategory": "cat_name_5"
+          },
+          {
+            "oneTrustCookieCategory": "cat_id_6"
+          }
+        ],
+        "eventFilteringOption": "disable"
+      },
+      "liveEventsConfig": {
+      },
+      "id": "2Kb0uWtwcvl1mUv1IBc5a8YhuM6",
+      "name": "AppCues Prod",
+      "enabled": true,
+      "destinationDefinitionId": "1mc0kINTIskyeeynZQTSsOlAR43",
+      "workspaceId": "1vt9Bg4Yne53AAjT0ExfN4N10Z6",
+      "deleted": false,
+      "createdAt": "2023-01-20T15:23:17.733Z",
+      "updatedAt": "2023-01-20T15:23:17.733Z",
+      "revisionId": "2Kb0uSTrpYDe7bCrRlOOx2WOvhp",
+      "secretVersion": 1,
+      "transformations": [
+      ],
+      "destinationDefinition": {
+        "config": {
+          "destConfig": {
+            "web": [
+              "useNativeSDK",
+              "oneTrustCookieCategories"
+            ],
+            "defaultConfig": [
+              "accountId",
+              "blacklistedEvents",
+              "whitelistedEvents",
+              "eventFilteringOption"
+            ]
+          },
+          "secretKeys": [
+          ],
+          "excludeKeys": [
+          ],
+          "includeKeys": [
+            "accountId",
+            "blacklistedEvents",
+            "whitelistedEvents",
+            "oneTrustCookieCategories",
+            "eventFilteringOption"
+          ],
+          "transformAt": "processor",
+          "transformAtV1": "processor",
+          "supportedSourceTypes": [
+            "android",
+            "ios",
+            "web",
+            "unity",
+            "amp",
+            "cloud",
+            "warehouse",
+            "reactnative",
+            "flutter",
+            "cordova"
+          ],
+          "supportedMessageTypes": [
+            "identify",
+            "page",
+            "screen",
+            "track"
+          ],
+          "saveDestinationResponse": true
+        },
+        "configSchema": null,
+        "responseRules": null,
+        "options": null,
+        "uiConfig": [
+          {
+            "title": "Connection Settings",
+            "fields": [
+              {
+                "type": "textInput",
+                "label": "Account Id",
+                "regex": "^(.{0,100})$",
+                "value": "accountId",
+                "required": true,
+                "placeholder": "e.g: 81429",
+                "regexErrorMessage": "Invalid Account Id"
+              }
+            ]
+          },
+          {
+            "title": "Native SDK",
+            "fields": [
+              {
+                "type": "checkbox",
+                "label": "Use device-mode to send events",
+                "value": "useNativeSDK",
+                "default": true
+              }
+            ]
+          },
+          {
+            "title": "Client-side Events Filtering",
+            "fields": [
+              {
+                "type": "singleSelect",
+                "value": "eventFilteringOption",
+                "options": [
+                  {
+                    "name": "Disable",
+                    "value": "disable"
+                  },
+                  {
+                    "name": "Allowlist",
+                    "value": "whitelistedEvents"
+                  },
+                  {
+                    "name": "Denylist",
+                    "value": "blacklistedEvents"
+                  }
+                ],
+                "required": false,
+                "defaultOption": {
+                  "name": "Disable",
+                  "value": "disable"
+                }
+              },
+              {
+                "type": "dynamicCustomForm",
+                "label": "Allowlist",
+                "value": "whitelistedEvents",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "value": "eventName",
+                    "required": false,
+                    "placeholder": "e.g: Anonymous Page Visit"
+                  }
+                ]
+              },
+              {
+                "type": "dynamicCustomForm",
+                "label": "Denylist",
+                "value": "blacklistedEvents",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "value": "eventName",
+                    "required": false,
+                    "placeholder": "e.g: Credit Card Added"
+                  }
+                ]
+              }
+            ],
+            "sectionNote": "Applicable only for device-mode integrations. If enabled, it works only with either allowlisted or denylisted events"
+          },
+          {
+            "title": "Consent Settings",
+            "fields": [
+              {
+                "type": "dynamicCustomForm",
+                "label": "OneTrust Cookie Categories",
+                "value": "oneTrustCookieCategories",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "label": "Category Name/ID",
+                    "value": "oneTrustCookieCategory",
+                    "required": false,
+                    "placeholder": "Marketing"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "id": "1mc0kINTIskyeeynZQTSsOlAR43",
+        "name": "APPCUES",
+        "displayName": "Appcues",
+        "category": null,
+        "createdAt": "2021-01-04T16:28:33.109Z",
+        "updatedAt": "2023-01-12T06:37:16.965Z"
+      },
+      "areTransformationsConnected": false
+    },
+    {
+      "secretConfig": {
+      },
+      "config": {
+        "trackingID": "UA-12345567-2",
+        "doubleClick": false,
+        "enhancedLinkAttribution": false,
+        "includeSearch": false,
+        "trackCategorizedPages": true,
+        "trackNamedPages": true,
+        "useRichEventNames": false,
+        "sampleRate": "100",
+        "siteSpeedSampleRate": "1",
+        "resetCustomDimensionsOnPage": [
+          {
+            "resetCustomDimensionsOnPage": ""
+          }
+        ],
+        "setAllMappedProps": true,
+        "anonymizeIp": false,
+        "domain": "auto",
+        "enhancedEcommerce": false,
+        "nonInteraction": false,
+        "optimize": "",
+        "sendUserId": false,
+        "useGoogleAmpClientId": false,
+        "namedTracker": false,
+        "blacklistedEvents": [
+          {
+            "eventName": ""
+          }
+        ],
+        "whitelistedEvents": [
+          {
+            "eventName": ""
+          }
+        ],
+        "oneTrustCookieCategories": [
+          {
+            "oneTrustCookieCategory": "cat_id_9"
+          },
+          {
+            "oneTrustCookieCategory": "cat_id_10"
+          }
+        ],
+        "eventFilteringOption": "disable"
+      },
+      "liveEventsConfig": {
+      },
+      "id": "2KX4GMCpQiCfjVoTwnF1ZsWaJlN",
+      "name": "GA Prod",
+      "enabled": true,
+      "destinationDefinitionId": "1QGzNyNSA4alXixnhDcq4C10ac2",
+      "workspaceId": "1vt9Bg4Yne53AAjT0ExfN4N10Z6",
+      "deleted": false,
+      "createdAt": "2023-01-19T05:51:36.998Z",
+      "updatedAt": "2023-01-19T14:42:26.395Z",
+      "revisionId": "2KY6opnsNvkRj2iaHJbFL2zwErn",
+      "secretVersion": 4,
+      "transformations": [
+      ],
+      "destinationDefinition": {
+        "config": {
+          "auth": {
+            "role": "google_analytics",
+            "type": "OAuth",
+            "provider": "Google",
+            "rudderScopes": [
+              "delete"
+            ]
+          },
+          "destConfig": {
+            "web": [
+              "useNativeSDK",
+              "trackCategorizedPages",
+              "trackNamedPages",
+              "useRichEventNames",
+              "sampleRate",
+              "siteSpeedSampleRate",
+              "resetCustomDimensionsOnPage",
+              "setAllMappedProps",
+              "domain",
+              "optimize",
+              "useGoogleAmpClientId",
+              "namedTracker",
+              "oneTrustCookieCategories"
+            ],
+            "defaultConfig": [
+              "trackingID",
+              "rudderDeleteAccountId",
+              "customMappings",
+              "doubleClick",
+              "enhancedLinkAttribution",
+              "includeSearch",
+              "dimensions",
+              "metrics",
+              "contentGroupings",
+              "enableServerSideIdentify",
+              "serverSideIdentifyEventCategory",
+              "serverSideIdentifyEventAction",
+              "anonymizeIp",
+              "enhancedEcommerce",
+              "nonInteraction",
+              "sendUserId",
+              "disableMd5",
+              "blacklistedEvents",
+              "whitelistedEvents",
+              "eventFilteringOption"
+            ]
+          },
+          "secretKeys": [
+          ],
+          "excludeKeys": [
+          ],
+          "includeKeys": [
+            "trackingID",
+            "doubleClick",
+            "enhancedLinkAttribution",
+            "includeSearch",
+            "trackCategorizedPages",
+            "trackNamedPages",
+            "useRichEventNames",
+            "sampleRate",
+            "siteSpeedSampleRate",
+            "dimensions",
+            "metrics",
+            "resetCustomDimensionsOnPage",
+            "setAllMappedProps",
+            "contentGroupings",
+            "anonymizeIp",
+            "domain",
+            "enhancedEcommerce",
+            "nonInteraction",
+            "optimize",
+            "sendUserId",
+            "useGoogleAmpClientId",
+            "namedTracker",
+            "blacklistedEvents",
+            "whitelistedEvents",
+            "oneTrustCookieCategories",
+            "eventFilteringOption"
+          ],
+          "transformAt": "processor",
+          "transformAtV1": "processor",
+          "supportedSourceTypes": [
+            "android",
+            "ios",
+            "web",
+            "unity",
+            "amp",
+            "cloud",
+            "warehouse",
+            "reactnative",
+            "flutter",
+            "cordova"
+          ],
+          "supportsVisualMapper": true,
+          "supportedMessageTypes": [
+            "identify",
+            "page",
+            "screen",
+            "track"
+          ],
+          "saveDestinationResponse": false
+        },
+        "configSchema": {
+          "type": "object",
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "required": [
+            "trackingID"
+          ],
+          "properties": {
+            "domain": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^(.{0,100})$)"
+                }
+              }
+            },
+            "optimize": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^(.{0,100})$)"
+                }
+              }
+            },
+            "dimensions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "to": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  },
+                  "from": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "disableMd5": {
+              "type": "boolean"
+            },
+            "sampleRate": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                }
+              }
+            },
+            "sendUserId": {
+              "type": "boolean"
+            },
+            "trackingID": {
+              "type": "string",
+              "pattern": "(^env[.].+)|(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^(UA|YT|MO)-\\d+-\\d{0,100}$)"
+            },
+            "anonymizeIp": {
+              "type": "boolean"
+            },
+            "doubleClick": {
+              "type": "boolean"
+            },
+            "namedTracker": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "useNativeSDK": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "includeSearch": {
+              "type": "boolean"
+            },
+            "nonInteraction": {
+              "type": "boolean"
+            },
+            "trackNamedPages": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "contentGroupings": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "to": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  },
+                  "from": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "blacklistedEvents": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "eventName": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "enhancedEcommerce": {
+              "type": "boolean"
+            },
+            "setAllMappedProps": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "whitelistedEvents": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "eventName": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "siteSpeedSampleRate": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                }
+              }
+            },
+            "eventFilteringOption": {
+              "type": "string",
+              "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(disable|whitelistedEvents|blacklistedEvents)$"
+            },
+            "useGoogleAmpClientId": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "trackCategorizedPages": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "enhancedLinkAttribution": {
+              "type": "boolean"
+            },
+            "enableServerSideIdentify": {
+              "type": "boolean"
+            },
+            "oneTrustCookieCategories": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "oneTrustCookieCategory": {
+                        "type": "string",
+                        "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "resetCustomDimensionsOnPage": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "resetCustomDimensionsOnPage": {
+                        "type": "string",
+                        "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "serverSideIdentifyEventAction": {
+              "type": "string",
+              "pattern": "(^env[.].+)|(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^(.{0,100})$)"
+            },
+            "serverSideIdentifyEventCategory": {
+              "type": "string",
+              "pattern": "(^env[.].+)|(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^(.{0,100})$)"
+            }
+          }
+        },
+        "responseRules": null,
+        "options": null,
+        "uiConfig": [
+          {
+            "title": "Connection Settings",
+            "fields": [
+              {
+                "type": "textInput",
+                "label": "Tracking ID",
+                "regex": "(^{{.*\\|\\|(.*)}}$)|(^(UA|YT|MO)-\\d+-\\d{0,100}$)",
+                "value": "trackingID",
+                "required": true,
+                "placeholder": "e.g: UA-125934xxx-1",
+                "regexErrorMessage": "Invalid Tracking ID"
+              }
+            ]
+          },
+          {
+            "title": "Native SDK",
+            "fields": [
+              {
+                "type": "checkbox",
+                "label": "Use device-mode to send events",
+                "value": "useNativeSDK",
+                "default": false
+              }
+            ]
+          },
+          {
+            "title": "Client-side Events Filtering",
+            "fields": [
+              {
+                "type": "singleSelect",
+                "value": "eventFilteringOption",
+                "options": [
+                  {
+                    "name": "Disable",
+                    "value": "disable"
+                  },
+                  {
+                    "name": "Allowlist",
+                    "value": "whitelistedEvents"
+                  },
+                  {
+                    "name": "Denylist",
+                    "value": "blacklistedEvents"
+                  }
+                ],
+                "required": false,
+                "defaultOption": {
+                  "name": "Disable",
+                  "value": "disable"
+                }
+              },
+              {
+                "type": "dynamicCustomForm",
+                "label": "Allowlist",
+                "value": "whitelistedEvents",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "value": "eventName",
+                    "required": false,
+                    "placeholder": "e.g: Anonymous Page Visit"
+                  }
+                ]
+              },
+              {
+                "type": "dynamicCustomForm",
+                "label": "Denylist",
+                "value": "blacklistedEvents",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "value": "eventName",
+                    "required": false,
+                    "placeholder": "e.g: Credit Card Added"
+                  }
+                ]
+              }
+            ],
+            "sectionNote": "Applicable only for device-mode integrations. If enabled, it works only with either allowlisted or denylisted events"
+          },
+          {
+            "title": "Reporting",
+            "fields": [
+              {
+                "type": "checkbox",
+                "label": "Remarketing, Display Ads and Demographic Reports.",
+                "value": "doubleClick",
+                "default": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Enable Enhanced Link Attribution",
+                "value": "enhancedLinkAttribution",
+                "default": false
+              }
+            ]
+          },
+          {
+            "title": "Track Pages",
+            "fields": [
+              {
+                "type": "checkbox",
+                "label": "Include the Querystring in Page Views",
+                "value": "includeSearch",
+                "default": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Track Categorized Pages",
+                "value": "trackCategorizedPages",
+                "default": true
+              },
+              {
+                "type": "checkbox",
+                "label": "Track Named Pages",
+                "value": "trackNamedPages",
+                "default": true
+              },
+              {
+                "type": "checkbox",
+                "label": "Use Rich Event Names",
+                "value": "useRichEventNames",
+                "default": false,
+                "footerNote": "Enable this to use 'Viewed <name>/<category> Page' as event names for tracking named and categorized page events. For example, 'Viewed Signup Page'."
+              }
+            ]
+          },
+          {
+            "title": "Sampling",
+            "fields": [
+              {
+                "type": "textInput",
+                "label": "Sample Rate",
+                "regex": "(^{{.*\\|\\|(.*)}}$)|(^(.{0,100})$)",
+                "value": "sampleRate",
+                "default": "100",
+                "regexErrorMessage": "Invalid Sample Rate"
+              },
+              {
+                "type": "textInput",
+                "label": "Site Speed Sample Rate",
+                "regex": "(^{{.*\\|\\|(.*)}}$)|(^(.{0,100})$)",
+                "value": "siteSpeedSampleRate",
+                "default": "1",
+                "regexErrorMessage": "Invalid Site Speed Sample Rate"
+              }
+            ]
+          },
+          {
+            "title": "Custom Dimensions & Metrics",
+            "fields": [
+              {
+                "type": "dynamicForm",
+                "value": "dimensions",
+                "keyLeft": "from",
+                "keyRight": "to",
+                "labelLeft": "Event or Property",
+                "labelRight": "Custom Dimension",
+                "placeholderLeft": "e.g: first_name",
+                "placeholderRight": "e.g: dimension1"
+              },
+              {
+                "type": "dynamicForm",
+                "value": "metrics",
+                "keyLeft": "from",
+                "keyRight": "to",
+                "labelLeft": "Traits or  Property",
+                "labelRight": "Metric",
+                "placeholderLeft": "e.g: age",
+                "placeholderRight": "e.g: metric1"
+              },
+              {
+                "type": "dynamicCustomForm",
+                "value": "resetCustomDimensionsOnPage",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "label": "Reset dimensions on Page calls",
+                    "regex": "(^{{.*\\|\\|(.*)}}$)|(^(.{0,100})$)",
+                    "value": "resetCustomDimensionsOnPage",
+                    "default": [
+                    ],
+                    "required": false,
+                    "regexErrorMessage": "Invalid dimensions"
+                  }
+                ]
+              },
+              {
+                "type": "checkbox",
+                "label": "Set Custom Dimensions & Metrics to the Page",
+                "value": "setAllMappedProps",
+                "default": true
+              }
+            ]
+          },
+          {
+            "title": "Property & Trait Mapping",
+            "fields": [
+              {
+                "type": "dynamicForm",
+                "value": "contentGroupings",
+                "keyLeft": "from",
+                "keyRight": "to",
+                "labelLeft": "Traits or  Property",
+                "labelRight": "Content Grouping",
+                "placeholderLeft": "e.g: section",
+                "placeholderRight": "e.g: contentGroup1"
+              }
+            ]
+          },
+          {
+            "title": "Server Side Identify",
+            "fields": [
+              {
+                "type": "checkbox",
+                "label": "Enable Server Side Identify",
+                "value": "enableServerSideIdentify",
+                "default": false
+              },
+              {
+                "type": "textInput",
+                "label": "Server Side Identify Event Category",
+                "regex": "(^{{.*\\|\\|(.*)}}$)|(^(.{0,100})$)",
+                "value": "serverSideIdentifyEventCategory",
+                "default": "",
+                "regexErrorMessage": "Invalid Server Side Identify Event Category"
+              },
+              {
+                "type": "textInput",
+                "label": "Server Side Identify Event Action",
+                "regex": "(^{{.*\\|\\|(.*)}}$)|(^(.{0,100})$)",
+                "value": "serverSideIdentifyEventAction",
+                "default": "",
+                "regexErrorMessage": "Invalid Server Side Identify Event Action"
+              }
+            ]
+          },
+          {
+            "title": "Other Settings",
+            "fields": [
+              {
+                "type": "checkbox",
+                "label": "Use Named Tracker",
+                "value": "namedTracker",
+                "default": false,
+                "footerNote": "Turn this on to send events with track name rudderGATracker."
+              },
+              {
+                "type": "checkbox",
+                "label": "Disable Md5 encryption from Client ID",
+                "value": "disableMd5",
+                "default": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Anonymize IP Addresses",
+                "value": "anonymizeIp",
+                "default": false
+              },
+              {
+                "type": "textInput",
+                "label": "Cookie Domain Name",
+                "regex": "(^{{.*\\|\\|(.*)}}$)|(^(.{0,100})$)",
+                "value": "domain",
+                "default": "auto",
+                "regexErrorMessage": "Invalid Cookie Domain Name"
+              },
+              {
+                "type": "checkbox",
+                "label": "Enable Enhanced Ecommerce",
+                "value": "enhancedEcommerce",
+                "default": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Add the non-interaction flag to all events",
+                "value": "nonInteraction",
+                "default": false
+              },
+              {
+                "type": "textInput",
+                "label": "Optimize Container ID",
+                "regex": "(^{{.*\\|\\|(.*)}}$)|(^(.{0,100})$)",
+                "value": "optimize",
+                "default": "",
+                "regexErrorMessage": "Optimize Container ID"
+              },
+              {
+                "type": "checkbox",
+                "label": "Send user-id to GA",
+                "value": "sendUserId",
+                "default": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Use Google AMP Client ID",
+                "value": "useGoogleAmpClientId",
+                "default": false
+              }
+            ]
+          },
+          {
+            "fields": [
+              {
+                "type": "dynamicForm",
+                "value": "customMappings",
+                "hidden": true,
+                "keyLeft": "from",
+                "keyRight": "to"
+              }
+            ]
+          },
+          {
+            "title": "Consent Settings",
+            "fields": [
+              {
+                "type": "dynamicCustomForm",
+                "label": "OneTrust Cookie Categories",
+                "value": "oneTrustCookieCategories",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "label": "Category Name/ID",
+                    "value": "oneTrustCookieCategory",
+                    "required": false,
+                    "placeholder": "Marketing"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "id": "1QGzNyNSA4alXixnhDcq4C10ac2",
+        "name": "GA",
+        "displayName": "Google Analytics",
+        "category": null,
+        "createdAt": "2019-09-02T08:08:04.178Z",
+        "updatedAt": "2023-01-12T06:37:06.032Z"
+      },
+      "areTransformationsConnected": false
+    },
+    {
+      "secretConfig": {
+      },
+      "config": {
+        "trackingID": "UA-12345567-2",
+        "doubleClick": false,
+        "enhancedLinkAttribution": false,
+        "includeSearch": false,
+        "trackCategorizedPages": true,
+        "trackNamedPages": true,
+        "useRichEventNames": false,
+        "sampleRate": "100",
+        "siteSpeedSampleRate": "1",
+        "resetCustomDimensionsOnPage": [
+          {
+            "resetCustomDimensionsOnPage": ""
+          }
+        ],
+        "setAllMappedProps": true,
+        "anonymizeIp": false,
+        "domain": "auto",
+        "enhancedEcommerce": false,
+        "nonInteraction": false,
+        "optimize": "",
+        "sendUserId": false,
+        "useGoogleAmpClientId": false,
+        "namedTracker": false,
+        "blacklistedEvents": [
+          {
+            "eventName": ""
+          }
+        ],
+        "whitelistedEvents": [
+          {
+            "eventName": ""
+          }
+        ],
+        "oneTrustCookieCategories": [
+          {
+            "oneTrustCookieCategory": "cat_name_7"
+          },
+          {
+            "oneTrustCookieCategory": "cat_name_10"
+          }
+        ],
+        "eventFilteringOption": "disable"
+      },
+      "liveEventsConfig": {
+      },
+      "id": "2KX4GMCpQiCfjVoTwnF1ZsWaJlQ",
+      "name": "GA Prod",
+      "enabled": true,
+      "destinationDefinitionId": "1QGzNyNSA4alXixnhDcq4C10ac2",
+      "workspaceId": "1vt9Bg4Yne53AAjT0ExfN4N10Z6",
+      "deleted": false,
+      "createdAt": "2023-01-19T05:51:36.998Z",
+      "updatedAt": "2023-01-19T14:42:26.395Z",
+      "revisionId": "2KY6opnsNvkRj2iaHJbFL2zwErn",
+      "secretVersion": 4,
+      "transformations": [
+      ],
+      "destinationDefinition": {
+        "config": {
+          "auth": {
+            "role": "google_analytics",
+            "type": "OAuth",
+            "provider": "Google",
+            "rudderScopes": [
+              "delete"
+            ]
+          },
+          "destConfig": {
+            "web": [
+              "useNativeSDK",
+              "trackCategorizedPages",
+              "trackNamedPages",
+              "useRichEventNames",
+              "sampleRate",
+              "siteSpeedSampleRate",
+              "resetCustomDimensionsOnPage",
+              "setAllMappedProps",
+              "domain",
+              "optimize",
+              "useGoogleAmpClientId",
+              "namedTracker",
+              "oneTrustCookieCategories"
+            ],
+            "defaultConfig": [
+              "trackingID",
+              "rudderDeleteAccountId",
+              "customMappings",
+              "doubleClick",
+              "enhancedLinkAttribution",
+              "includeSearch",
+              "dimensions",
+              "metrics",
+              "contentGroupings",
+              "enableServerSideIdentify",
+              "serverSideIdentifyEventCategory",
+              "serverSideIdentifyEventAction",
+              "anonymizeIp",
+              "enhancedEcommerce",
+              "nonInteraction",
+              "sendUserId",
+              "disableMd5",
+              "blacklistedEvents",
+              "whitelistedEvents",
+              "eventFilteringOption"
+            ]
+          },
+          "secretKeys": [
+          ],
+          "excludeKeys": [
+          ],
+          "includeKeys": [
+            "trackingID",
+            "doubleClick",
+            "enhancedLinkAttribution",
+            "includeSearch",
+            "trackCategorizedPages",
+            "trackNamedPages",
+            "useRichEventNames",
+            "sampleRate",
+            "siteSpeedSampleRate",
+            "dimensions",
+            "metrics",
+            "resetCustomDimensionsOnPage",
+            "setAllMappedProps",
+            "contentGroupings",
+            "anonymizeIp",
+            "domain",
+            "enhancedEcommerce",
+            "nonInteraction",
+            "optimize",
+            "sendUserId",
+            "useGoogleAmpClientId",
+            "namedTracker",
+            "blacklistedEvents",
+            "whitelistedEvents",
+            "oneTrustCookieCategories",
+            "eventFilteringOption"
+          ],
+          "transformAt": "processor",
+          "transformAtV1": "processor",
+          "supportedSourceTypes": [
+            "android",
+            "ios",
+            "web",
+            "unity",
+            "amp",
+            "cloud",
+            "warehouse",
+            "reactnative",
+            "flutter",
+            "cordova"
+          ],
+          "supportsVisualMapper": true,
+          "supportedMessageTypes": [
+            "identify",
+            "page",
+            "screen",
+            "track"
+          ],
+          "saveDestinationResponse": false
+        },
+        "configSchema": {
+          "type": "object",
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "required": [
+            "trackingID"
+          ],
+          "properties": {
+            "domain": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^(.{0,100})$)"
+                }
+              }
+            },
+            "optimize": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^(.{0,100})$)"
+                }
+              }
+            },
+            "dimensions": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "to": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  },
+                  "from": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "disableMd5": {
+              "type": "boolean"
+            },
+            "sampleRate": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                }
+              }
+            },
+            "sendUserId": {
+              "type": "boolean"
+            },
+            "trackingID": {
+              "type": "string",
+              "pattern": "(^env[.].+)|(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^(UA|YT|MO)-\\d+-\\d{0,100}$)"
+            },
+            "anonymizeIp": {
+              "type": "boolean"
+            },
+            "doubleClick": {
+              "type": "boolean"
+            },
+            "namedTracker": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "useNativeSDK": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "includeSearch": {
+              "type": "boolean"
+            },
+            "nonInteraction": {
+              "type": "boolean"
+            },
+            "trackNamedPages": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "contentGroupings": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "to": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  },
+                  "from": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "blacklistedEvents": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "eventName": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "enhancedEcommerce": {
+              "type": "boolean"
+            },
+            "setAllMappedProps": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "whitelistedEvents": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "eventName": {
+                    "type": "string",
+                    "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                  }
+                }
+              }
+            },
+            "siteSpeedSampleRate": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "string",
+                  "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                }
+              }
+            },
+            "eventFilteringOption": {
+              "type": "string",
+              "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(disable|whitelistedEvents|blacklistedEvents)$"
+            },
+            "useGoogleAmpClientId": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "trackCategorizedPages": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "enhancedLinkAttribution": {
+              "type": "boolean"
+            },
+            "enableServerSideIdentify": {
+              "type": "boolean"
+            },
+            "oneTrustCookieCategories": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "oneTrustCookieCategory": {
+                        "type": "string",
+                        "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "resetCustomDimensionsOnPage": {
+              "type": "object",
+              "properties": {
+                "web": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "resetCustomDimensionsOnPage": {
+                        "type": "string",
+                        "pattern": "(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^env[.].+)|^(.{0,100})$"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "serverSideIdentifyEventAction": {
+              "type": "string",
+              "pattern": "(^env[.].+)|(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^(.{0,100})$)"
+            },
+            "serverSideIdentifyEventCategory": {
+              "type": "string",
+              "pattern": "(^env[.].+)|(^\\{\\{.*\\|\\|(.*)\\}\\}$)|(^(.{0,100})$)"
+            }
+          }
+        },
+        "responseRules": null,
+        "options": null,
+        "uiConfig": [
+          {
+            "title": "Connection Settings",
+            "fields": [
+              {
+                "type": "textInput",
+                "label": "Tracking ID",
+                "regex": "(^{{.*\\|\\|(.*)}}$)|(^(UA|YT|MO)-\\d+-\\d{0,100}$)",
+                "value": "trackingID",
+                "required": true,
+                "placeholder": "e.g: UA-125934xxx-1",
+                "regexErrorMessage": "Invalid Tracking ID"
+              }
+            ]
+          },
+          {
+            "title": "Native SDK",
+            "fields": [
+              {
+                "type": "checkbox",
+                "label": "Use device-mode to send events",
+                "value": "useNativeSDK",
+                "default": false
+              }
+            ]
+          },
+          {
+            "title": "Client-side Events Filtering",
+            "fields": [
+              {
+                "type": "singleSelect",
+                "value": "eventFilteringOption",
+                "options": [
+                  {
+                    "name": "Disable",
+                    "value": "disable"
+                  },
+                  {
+                    "name": "Allowlist",
+                    "value": "whitelistedEvents"
+                  },
+                  {
+                    "name": "Denylist",
+                    "value": "blacklistedEvents"
+                  }
+                ],
+                "required": false,
+                "defaultOption": {
+                  "name": "Disable",
+                  "value": "disable"
+                }
+              },
+              {
+                "type": "dynamicCustomForm",
+                "label": "Allowlist",
+                "value": "whitelistedEvents",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "value": "eventName",
+                    "required": false,
+                    "placeholder": "e.g: Anonymous Page Visit"
+                  }
+                ]
+              },
+              {
+                "type": "dynamicCustomForm",
+                "label": "Denylist",
+                "value": "blacklistedEvents",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "value": "eventName",
+                    "required": false,
+                    "placeholder": "e.g: Credit Card Added"
+                  }
+                ]
+              }
+            ],
+            "sectionNote": "Applicable only for device-mode integrations. If enabled, it works only with either allowlisted or denylisted events"
+          },
+          {
+            "title": "Reporting",
+            "fields": [
+              {
+                "type": "checkbox",
+                "label": "Remarketing, Display Ads and Demographic Reports.",
+                "value": "doubleClick",
+                "default": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Enable Enhanced Link Attribution",
+                "value": "enhancedLinkAttribution",
+                "default": false
+              }
+            ]
+          },
+          {
+            "title": "Track Pages",
+            "fields": [
+              {
+                "type": "checkbox",
+                "label": "Include the Querystring in Page Views",
+                "value": "includeSearch",
+                "default": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Track Categorized Pages",
+                "value": "trackCategorizedPages",
+                "default": true
+              },
+              {
+                "type": "checkbox",
+                "label": "Track Named Pages",
+                "value": "trackNamedPages",
+                "default": true
+              },
+              {
+                "type": "checkbox",
+                "label": "Use Rich Event Names",
+                "value": "useRichEventNames",
+                "default": false,
+                "footerNote": "Enable this to use 'Viewed <name>/<category> Page' as event names for tracking named and categorized page events. For example, 'Viewed Signup Page'."
+              }
+            ]
+          },
+          {
+            "title": "Sampling",
+            "fields": [
+              {
+                "type": "textInput",
+                "label": "Sample Rate",
+                "regex": "(^{{.*\\|\\|(.*)}}$)|(^(.{0,100})$)",
+                "value": "sampleRate",
+                "default": "100",
+                "regexErrorMessage": "Invalid Sample Rate"
+              },
+              {
+                "type": "textInput",
+                "label": "Site Speed Sample Rate",
+                "regex": "(^{{.*\\|\\|(.*)}}$)|(^(.{0,100})$)",
+                "value": "siteSpeedSampleRate",
+                "default": "1",
+                "regexErrorMessage": "Invalid Site Speed Sample Rate"
+              }
+            ]
+          },
+          {
+            "title": "Custom Dimensions & Metrics",
+            "fields": [
+              {
+                "type": "dynamicForm",
+                "value": "dimensions",
+                "keyLeft": "from",
+                "keyRight": "to",
+                "labelLeft": "Event or Property",
+                "labelRight": "Custom Dimension",
+                "placeholderLeft": "e.g: first_name",
+                "placeholderRight": "e.g: dimension1"
+              },
+              {
+                "type": "dynamicForm",
+                "value": "metrics",
+                "keyLeft": "from",
+                "keyRight": "to",
+                "labelLeft": "Traits or  Property",
+                "labelRight": "Metric",
+                "placeholderLeft": "e.g: age",
+                "placeholderRight": "e.g: metric1"
+              },
+              {
+                "type": "dynamicCustomForm",
+                "value": "resetCustomDimensionsOnPage",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "label": "Reset dimensions on Page calls",
+                    "regex": "(^{{.*\\|\\|(.*)}}$)|(^(.{0,100})$)",
+                    "value": "resetCustomDimensionsOnPage",
+                    "default": [
+                    ],
+                    "required": false,
+                    "regexErrorMessage": "Invalid dimensions"
+                  }
+                ]
+              },
+              {
+                "type": "checkbox",
+                "label": "Set Custom Dimensions & Metrics to the Page",
+                "value": "setAllMappedProps",
+                "default": true
+              }
+            ]
+          },
+          {
+            "title": "Property & Trait Mapping",
+            "fields": [
+              {
+                "type": "dynamicForm",
+                "value": "contentGroupings",
+                "keyLeft": "from",
+                "keyRight": "to",
+                "labelLeft": "Traits or  Property",
+                "labelRight": "Content Grouping",
+                "placeholderLeft": "e.g: section",
+                "placeholderRight": "e.g: contentGroup1"
+              }
+            ]
+          },
+          {
+            "title": "Server Side Identify",
+            "fields": [
+              {
+                "type": "checkbox",
+                "label": "Enable Server Side Identify",
+                "value": "enableServerSideIdentify",
+                "default": false
+              },
+              {
+                "type": "textInput",
+                "label": "Server Side Identify Event Category",
+                "regex": "(^{{.*\\|\\|(.*)}}$)|(^(.{0,100})$)",
+                "value": "serverSideIdentifyEventCategory",
+                "default": "",
+                "regexErrorMessage": "Invalid Server Side Identify Event Category"
+              },
+              {
+                "type": "textInput",
+                "label": "Server Side Identify Event Action",
+                "regex": "(^{{.*\\|\\|(.*)}}$)|(^(.{0,100})$)",
+                "value": "serverSideIdentifyEventAction",
+                "default": "",
+                "regexErrorMessage": "Invalid Server Side Identify Event Action"
+              }
+            ]
+          },
+          {
+            "title": "Other Settings",
+            "fields": [
+              {
+                "type": "checkbox",
+                "label": "Use Named Tracker",
+                "value": "namedTracker",
+                "default": false,
+                "footerNote": "Turn this on to send events with track name rudderGATracker."
+              },
+              {
+                "type": "checkbox",
+                "label": "Disable Md5 encryption from Client ID",
+                "value": "disableMd5",
+                "default": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Anonymize IP Addresses",
+                "value": "anonymizeIp",
+                "default": false
+              },
+              {
+                "type": "textInput",
+                "label": "Cookie Domain Name",
+                "regex": "(^{{.*\\|\\|(.*)}}$)|(^(.{0,100})$)",
+                "value": "domain",
+                "default": "auto",
+                "regexErrorMessage": "Invalid Cookie Domain Name"
+              },
+              {
+                "type": "checkbox",
+                "label": "Enable Enhanced Ecommerce",
+                "value": "enhancedEcommerce",
+                "default": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Add the non-interaction flag to all events",
+                "value": "nonInteraction",
+                "default": false
+              },
+              {
+                "type": "textInput",
+                "label": "Optimize Container ID",
+                "regex": "(^{{.*\\|\\|(.*)}}$)|(^(.{0,100})$)",
+                "value": "optimize",
+                "default": "",
+                "regexErrorMessage": "Optimize Container ID"
+              },
+              {
+                "type": "checkbox",
+                "label": "Send user-id to GA",
+                "value": "sendUserId",
+                "default": false
+              },
+              {
+                "type": "checkbox",
+                "label": "Use Google AMP Client ID",
+                "value": "useGoogleAmpClientId",
+                "default": false
+              }
+            ]
+          },
+          {
+            "fields": [
+              {
+                "type": "dynamicForm",
+                "value": "customMappings",
+                "hidden": true,
+                "keyLeft": "from",
+                "keyRight": "to"
+              }
+            ]
+          },
+          {
+            "title": "Consent Settings",
+            "fields": [
+              {
+                "type": "dynamicCustomForm",
+                "label": "OneTrust Cookie Categories",
+                "value": "oneTrustCookieCategories",
+                "customFields": [
+                  {
+                    "type": "textInput",
+                    "label": "Category Name/ID",
+                    "value": "oneTrustCookieCategory",
+                    "required": false,
+                    "placeholder": "Marketing"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "id": "1QGzNyNSA4alXixnhDcq4C10ac2",
+        "name": "GA",
+        "displayName": "Google Analytics",
+        "category": null,
+        "createdAt": "2019-09-02T08:08:04.178Z",
+        "updatedAt": "2023-01-12T06:37:06.032Z"
+      },
+      "areTransformationsConnected": false
+    }
+  ],
+  "sourceDefinition": {
+    "options": null,
+    "config": null,
+    "configSchema": null,
+    "uiConfig": null,
+    "id": "1TW48i2bIzEl1HPf825cEznfIM8",
+    "name": "Javascript",
+    "displayName": "Javascript",
+    "category": null,
+    "createdAt": "2019-11-12T12:39:19.885Z",
+    "updatedAt": "2020-06-18T11:54:06.114Z"
+  }
+}

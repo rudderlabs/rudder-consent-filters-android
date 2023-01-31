@@ -147,7 +147,7 @@ public final class OneTrustInterceptor implements ConsentInterceptor {
     }
 
     private boolean isDestinationAllowedInIntegrations(RudderServerDestination destination, Map<String, Object> integrations, boolean isAllEnabled) {
-        String destinationDefinitionName = destination.getDestinationDefinition().getDefinitionName();
+        String destinationDefinitionName = destination.getDestinationDefinition().getDisplayName();
         Object isDestinationEnabled = integrations.get(destinationDefinitionName);
         if(isDestinationEnabled instanceof Boolean)
             return (boolean) isDestinationEnabled;
@@ -225,7 +225,7 @@ public final class OneTrustInterceptor implements ConsentInterceptor {
     private void allowAllConsentedDestinationsInIntegrations(Map<String, Object> integrationsMap,
                                                              List<RudderServerDestination> consentedDestinations) {
         for (RudderServerDestination consentedDestination : consentedDestinations) {
-            integrationsMap.put(consentedDestination.getDestinationDefinition().getDefinitionName(), true);
+            integrationsMap.put(consentedDestination.getDestinationDefinition().getDisplayName(), true);
         }
     }
 
@@ -239,6 +239,8 @@ public final class OneTrustInterceptor implements ConsentInterceptor {
 
     private Map<String, Object> getExternalIdsFromMessage(RudderMessage message) {
         RudderContext context = message.getContext();
+        if(context == null)
+            return Collections.emptyMap();
         List<Map<String, Object>> externalIdsPairList = context.getExternalIds();
         if (externalIdsPairList == null || externalIdsPairList.isEmpty()) {
             return Collections.emptyMap();
@@ -262,7 +264,8 @@ public final class OneTrustInterceptor implements ConsentInterceptor {
 
     private void updateRudderOptionWithMessageCustomContexts(RudderOption option, RudderMessage message) {
         RudderContext rudderContext = message.getContext();
-
+        if(rudderContext == null)
+            return;
         Map<String, Object> extractedCustomContexts = rudderContext.customContextMap;
         if (extractedCustomContexts == null || extractedCustomContexts.isEmpty()) {
             return;
