@@ -36,20 +36,21 @@ public final class OneTrustInterceptor implements ConsentInterceptor {
     private static final int ONE_TRUST_CONSENT_UNKNOWN_CONSTANT = -1;
     private final @NotNull
     OTPublishersHeadlessSDK oneTrustSdk;
-    private final Map<String,String> oneTrustCategoryIdNameMapping;
+    private Map<String,String> oneTrustCategoryIdNameMapping;
 
     //    private
     public OneTrustInterceptor(@NotNull OTPublishersHeadlessSDK oneTrustSdk) {
         this.oneTrustSdk = oneTrustSdk;
-        oneTrustCategoryIdNameMapping = createOneTrustCategoryNameToIdMapping(oneTrustSdk);
+        updateOneTrustCategoryNameToIdMapping(oneTrustSdk);
     }
 
-    private Map<String, String> createOneTrustCategoryNameToIdMapping(@NotNull OTPublishersHeadlessSDK oneTrustSdk) {
+
+    private void updateOneTrustCategoryNameToIdMapping(@NotNull OTPublishersHeadlessSDK oneTrustSdk) {
         JSONObject oneTrustSdkDomainGroupData = oneTrustSdk.getDomainGroupData();
         JSONArray categoryGroupArray = parseGroupArrayFromDomainGroupJSONObject(oneTrustSdkDomainGroupData);
         if(categoryGroupArray == null)
-            return Collections.emptyMap();
-        return generateOneTrustCategoryNameToIdMappingFromCategoryJsonArray(categoryGroupArray);
+            oneTrustCategoryIdNameMapping =  Collections.emptyMap();
+        oneTrustCategoryIdNameMapping =  generateOneTrustCategoryNameToIdMappingFromCategoryJsonArray(categoryGroupArray);
     }
 
     private @NotNull
@@ -324,6 +325,8 @@ public final class OneTrustInterceptor implements ConsentInterceptor {
     }
     private int getConsentStatusForCategoryName(String catName){
         String categoryId = oneTrustCategoryIdNameMapping.get(catName);
+        if(categoryId == null)
+            updateOneTrustCategoryNameToIdMapping(oneTrustSdk);
         if (categoryId != null)
             return getConsentStatusForCategoryId(categoryId);
         return ONE_TRUST_CONSENT_UNKNOWN_CONSTANT;
