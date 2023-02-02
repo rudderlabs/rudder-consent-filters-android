@@ -34,22 +34,29 @@ public final class OneTrustInterceptor implements ConsentInterceptor {
     private static final int ONE_TRUST_CONSENT_GIVEN_CONSTANT = 1;
     private static final int ONE_TRUST_CONSENT_NOT_GIVEN_CONSTANT = 0;
     private static final int ONE_TRUST_CONSENT_UNKNOWN_CONSTANT = -1;
-    private final @NotNull
-    OTPublishersHeadlessSDK oneTrustSdk;
+
     private Map<String,String> oneTrustCategoryIdNameMapping;
 
-    //    private
+    private @NotNull
+    OneTrustConsentChecker oneTrustConsentChecker;
+
+
     public OneTrustInterceptor(@NotNull OTPublishersHeadlessSDK oneTrustSdk) {
-        this.oneTrustSdk = oneTrustSdk;
         updateOneTrustCategoryNameToIdMapping(oneTrustSdk);
+        oneTrustConsentChecker = oneTrustSdk::getConsentStatusForGroupId;
     }
 
 
+    public void setOneTrustConsentChecker(@NotNull OneTrustConsentChecker oneTrustConsentChecker) {
+        this.oneTrustConsentChecker = oneTrustConsentChecker;
+    }
     private void updateOneTrustCategoryNameToIdMapping(@NotNull OTPublishersHeadlessSDK oneTrustSdk) {
         JSONObject oneTrustSdkDomainGroupData = oneTrustSdk.getDomainGroupData();
         JSONArray categoryGroupArray = parseGroupArrayFromDomainGroupJSONObject(oneTrustSdkDomainGroupData);
-        if(categoryGroupArray == null)
-            oneTrustCategoryIdNameMapping =  Collections.emptyMap();
+        if(categoryGroupArray == null) {
+            oneTrustCategoryIdNameMapping = Collections.emptyMap();
+            return;
+        }
         oneTrustCategoryIdNameMapping =  generateOneTrustCategoryNameToIdMappingFromCategoryJsonArray(categoryGroupArray);
     }
 
@@ -121,16 +128,31 @@ public final class OneTrustInterceptor implements ConsentInterceptor {
     public RudderMessage intercept(final RudderServerConfigSource rudderServerConfigSource,
                                    RudderMessage rudderMessage) {
         List<RudderServerDestination> allDestinations = rudderServerConfigSource.getDestinations();
-        List<RudderServerDestination> destinations =
-                filterDestinationsThroughMessageIntegrations(allDestinations, rudderMessage.getIntegrations());
-        if (destinations.isEmpty()) {
-            return rudderMessage;
-        }
-        List<RudderServerDestination> consentedDestinations = filterConsentedDestinations(destinations);
+        Map<String, Object> messageIntegrationsWithConsentUpdatedMap =
+        createUpdatedMessageIntegrationsMapWithConsentedDestinations(rudderMessage.getIntegrations(),
+                allDestinations);
 
-        return buildUpdatedMessageWithFilteredDestinations(rudderMessage, consentedDestinations);
+        return buildUpdatedMessageWithFilteredDestinations(rudderMessage,
+                messageIntegrationsWithConsentUpdatedMap);
 
     }
+
+    private @NotNull Map<String, Object>
+    createUpdatedMessageIntegrationsMapWithConsentedDestinations(Map<String, Object> integrations,
+                                                                 List<RudderServerDestination> allDestinations) {
+        Map<String, Object> updatedIntegrationsMapWithConsent = new HashMap<String, Object>(integrations);
+        for (RudderServerDestination destination: allDestinations) {
+            List<String> categoriesForDestination = getCategoriesNamesForDestination(destination);
+            if (categoriesForDestination.isEmpty()) {
+                continue;
+            }
+            if (! areAllCategoriesConsented(categoriesForDestination)) {
+                updatedIntegrationsMapWithConsent.put(destination.getDestinationDefinition().getDisplayName(), false);
+            }
+        }
+        return updatedIntegrationsMapWithConsent;
+    }
+
 
     private @NotNull
     List<RudderServerDestination> filterDestinationsThroughMessageIntegrations(List<RudderServerDestination>
@@ -166,47 +188,32 @@ public final class OneTrustInterceptor implements ConsentInterceptor {
     }
 
     private RudderMessage buildUpdatedMessageWithFilteredDestinations(RudderMessage oldMessage,
-                                                                      List<RudderServerDestination> consentedDestinations) {
+                                                                      Map<String, Object> messageIntegrationsWithConsentUpdatedMap) {
         RudderOption newOptions = mimicRudderOptionFromMessageWithConsentedDestinations(oldMessage,
-                consentedDestinations);
+                messageIntegrationsWithConsentUpdatedMap);
         return RudderMessageBuilder.from(oldMessage)
                 .setRudderOption(newOptions)
                 .build();
     }
 
     private RudderOption mimicRudderOptionFromMessageWithConsentedDestinations(RudderMessage oldMessage,
-                                                                               List<RudderServerDestination> consentedDestinations) {
+                                                                               Map<String, Object> messageIntegrationsWithConsentUpdatedMap) {
         RudderOption newOptions = new RudderOption();
         updateRudderOptionWithMessageCustomContexts(newOptions, oldMessage);
         updateRudderOptionWithMessageExternalIds(newOptions, oldMessage);
-        updateRudderOptionWithConsentedMessageIntegrations(newOptions, oldMessage, consentedDestinations);
+        updateRudderOptionWithConsentedMessageIntegrations(newOptions, messageIntegrationsWithConsentUpdatedMap);
 
         return newOptions;
     }
 
-    private void updateRudderOptionWithConsentedMessageIntegrations(RudderOption option, RudderMessage message,
-                                                                    List<RudderServerDestination> consentedDestinations) {
-        Map<String, Object> newIntegrationsMap = updatedMessageIntegrationMapWithConsentedDestinations(message, consentedDestinations);
-        if (newIntegrationsMap.isEmpty())
+    private void updateRudderOptionWithConsentedMessageIntegrations(RudderOption option,
+                                                                    Map<String, Object> messageIntegrationsWithConsentUpdatedMap) {
+        if (messageIntegrationsWithConsentUpdatedMap.isEmpty())
             return;
 
-        setAllIntegrationsToDefaultValue(newIntegrationsMap, false);
-        allowAllConsentedDestinationsInIntegrations(newIntegrationsMap, consentedDestinations);
-        updateRudderOptionWithNewIntegrations(option, newIntegrationsMap);
+        updateRudderOptionWithNewIntegrations(option, messageIntegrationsWithConsentUpdatedMap);
     }
 
-    private Map<String, Object> updatedMessageIntegrationMapWithConsentedDestinations(RudderMessage message,
-                                                                                      List<RudderServerDestination> consentedDestinations) {
-        Map<String, Object> messageIntegrations = message.getIntegrations();
-        if (messageIntegrations.isEmpty()) {
-            return Collections.emptyMap();
-        }
-        Map<String, Object> newIntegrationsMap = new LinkedHashMap<>(messageIntegrations);
-        setAllIntegrationsToDefaultValue(newIntegrationsMap, false);
-        allowAllConsentedDestinationsInIntegrations(newIntegrationsMap, consentedDestinations);
-
-        return newIntegrationsMap;
-    }
 
     private void updateRudderOptionWithNewIntegrations(RudderOption option, Map<String, Object> newIntegrationsMap) {
         for (Map.Entry<String, Object> newIntegrationEntry : newIntegrationsMap.entrySet()) {
@@ -286,7 +293,7 @@ public final class OneTrustInterceptor implements ConsentInterceptor {
     }
 
 
-    private List<RudderServerDestination> filterConsentedDestinations(List<RudderServerDestination> destinations) {
+    private List<RudderServerDestination> removeConsentedDestinations(List<RudderServerDestination> destinations) {
         List<RudderServerDestination> filteredDestinations = new ArrayList<>();
         for (RudderServerDestination destination : destinations) {
             List<String> categoriesForDestination = getCategoriesNamesForDestination(destination);
@@ -315,18 +322,18 @@ public final class OneTrustInterceptor implements ConsentInterceptor {
         }
 
         switch (consentStatus){
-            case ONE_TRUST_CONSENT_GIVEN_CONSTANT: return true;
-            case ONE_TRUST_CONSENT_NOT_GIVEN_CONSTANT:
-            default: return false;
+            case ONE_TRUST_CONSENT_NOT_GIVEN_CONSTANT:return false;
+            case ONE_TRUST_CONSENT_GIVEN_CONSTANT:
+            default: return true;
         }
     }
     private int getConsentStatusForCategoryId(String catId){
-        return oneTrustSdk.getConsentStatusForGroupId(catId);
+        return oneTrustConsentChecker.getConsentStatusForGroupId(catId);
     }
     private int getConsentStatusForCategoryName(String catName){
         String categoryId = oneTrustCategoryIdNameMapping.get(catName);
-        if(categoryId == null)
-            updateOneTrustCategoryNameToIdMapping(oneTrustSdk);
+//        if(categoryId == null)
+//            updateOneTrustCategoryNameToIdMapping(oneTrustSdk);
         if (categoryId != null)
             return getConsentStatusForCategoryId(categoryId);
         return ONE_TRUST_CONSENT_UNKNOWN_CONSTANT;
@@ -380,6 +387,18 @@ public final class OneTrustInterceptor implements ConsentInterceptor {
             }
         }
     }
+    @FunctionalInterface
+    public interface OneTrustConsentChecker{
+        /**
+         * Analogous to {@link OTPublishersHeadlessSDK#getConsentStatusForGroupId}
+         * @param optanonGroupId Category ID (eg. C0001) and the method will return the current consent status (integer value)
+         * @return
+         *      1 = Consent is given
+         *      0 = Consent is not given
+         *      -1 = Consent has not been collected (The SDK is not initialized OR there are no SDKs associated to this category)
 
+         */
+        int getConsentStatusForGroupId(String optanonGroupId);
+    }
 
 }

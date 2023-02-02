@@ -36,9 +36,10 @@ public class OneTrustInterceptorTest {
             "cat_id_8", "cat_id_9", "cat_id_10");
 
     //accepted destination ids from server config json
-    //1z7xfZC2slTjIjvNMiZKix3p8qp, 2KawPBvasYylQCVK4TIpGxPP9WW,1z7xfZC2slTjIjvNMiZKix3p8qy
+    //1z7xfZC2slTjIjvNMiZKix3p8qp, 2KawPBvasYylQCVK4TIpGxPP9WW,1z7xfZC2slTjIjvNMiZKix3p8qy,
+    //2KawPBvasYylQCVK4TIpGxPP9WM, cream roll has
     //rejected destination ids
-    //2KawPBvasYylQCVK4TIpGxPP9WM, 2Kb0uWtwcvl1mUv1IBc5a8YhuM6, 2KX4GMCpQiCfjVoTwnF1ZsWaJlN,
+    // 2Kb0uWtwcvl1mUv1IBc5a8YhuM6, 2KX4GMCpQiCfjVoTwnF1ZsWaJlN,
     //2KX4GMCpQiCfjVoTwnF1ZsWaJlQ
 
     private RudderServerConfigSource rudderServerConfigSource;
@@ -102,9 +103,10 @@ public class OneTrustInterceptorTest {
     }
 
     //accepted destination ids from server config json
-    //1z7xfZC2slTjIjvNMiZKix3p8qp, 2KawPBvasYylQCVK4TIpGxPP9WW,1z7xfZC2slTjIjvNMiZKix3p8qy
+    //1z7xfZC2slTjIjvNMiZKix3p8qp, 2KawPBvasYylQCVK4TIpGxPP9WW,1z7xfZC2slTjIjvNMiZKix3p8qy,
+    //2KawPBvasYylQCVK4TIpGxPP9WM
     //rejected destination ids
-    //2KawPBvasYylQCVK4TIpGxPP9WM, 2Kb0uWtwcvl1mUv1IBc5a8YhuM6, 2KX4GMCpQiCfjVoTwnF1ZsWaJlN,
+    // 2Kb0uWtwcvl1mUv1IBc5a8YhuM6, 2KX4GMCpQiCfjVoTwnF1ZsWaJlN,
     //2KX4GMCpQiCfjVoTwnF1ZsWaJlQ
     @Test
     public void testInterceptWithTwoAcceptedCategoryIds() {
@@ -118,10 +120,13 @@ public class OneTrustInterceptorTest {
         RudderMessage updatedMessage = oneTrustInterceptor.intercept(rudderServerConfigSource, message);
         assertThat(updatedMessage.getUserId(), is("u-1"));
         assertThat(message.getIntegrations(), allOf(
-                hasEntry("All", false),
-                hasEntry("Amplitude", true),
-                hasEntry("Adroll", true),
-                hasEntry("Rocksalt", true)
+                hasEntry("All", true),
+//                hasEntry("Amplitude", true),
+//                hasEntry("Adroll", true),
+//                hasEntry("Rocksalt", true)
+                hasEntry("Appcues", false),
+                hasEntry("Google Analytics", false),
+                hasEntry("Google Analytics 2", false)
         ));
     }
 
@@ -140,10 +145,12 @@ public class OneTrustInterceptorTest {
         RudderMessage updatedMessage = oneTrustInterceptor.intercept(rudderServerConfigSource, message);
         assertThat(updatedMessage.getUserId(), is("u-1"));
         assertThat(message.getIntegrations(), allOf(
-                hasEntry("All", false),
+                hasEntry("All", true),
                 hasEntry("Amplitude", false),
                 hasEntry("Adroll", false),
-                hasEntry("Rocksalt", true)
+                hasEntry("Appcues", false),
+                hasEntry("Google Analytics", false),
+                hasEntry("Google Analytics 2", false)
         ));
     }
     @Test
@@ -160,7 +167,11 @@ public class OneTrustInterceptorTest {
         assertThat(updatedMessage.getUserId(), is("u-1"));
         assertThat(message.getIntegrations(), allOf(
                 hasEntry("All", false),
-                hasEntry("Rocksalt", true)
+                hasEntry("Rocksalt", true),
+                hasEntry("Appcues", false),
+                hasEntry("Google Analytics", false),
+                hasEntry("Google Analytics 2", false)
+
         ));
     }
     @Test
@@ -178,8 +189,10 @@ public class OneTrustInterceptorTest {
         assertThat(updatedMessage.getUserId(), is("u-1"));
         assertThat(message.getIntegrations(), allOf(
                 hasEntry("All", false),
-                hasEntry("CreamRoll", false),
-                hasEntry("Appcues", false)
+                hasEntry("CreamRoll", true),
+                hasEntry("Appcues", false),
+                hasEntry("Google Analytics", false),
+                hasEntry("Google Analytics 2", false)
         ));
     }
 
