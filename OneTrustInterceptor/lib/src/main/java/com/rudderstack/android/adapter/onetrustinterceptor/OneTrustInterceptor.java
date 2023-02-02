@@ -30,7 +30,7 @@ public final class OneTrustInterceptor implements ConsentInterceptor {
     private static final String ONE_TRUST_COOKIE_CATEGORIES_JSON_KEY = "oneTrustCookieCategories";
     private static final String ONE_TRUST_COOKIE_INDIVIDUAL_CATEGORY_JSON_KEY = "oneTrustCookieCategory";
     private static final String ONE_TRUST_CATEGORY_NAME_JSON_KEY = "GroupNameMobile";
-    private static final String ONE_TRUST_CATEGORY_ID_JSON_KEY = "OptanonGroupId";
+    private static final String ONE_TRUST_CATEGORY_ID_JSON_KEY = "CustomGroupId";
     private static final int ONE_TRUST_CONSENT_GIVEN_CONSTANT = 1;
     private static final int ONE_TRUST_CONSENT_NOT_GIVEN_CONSTANT = 0;
     private static final int ONE_TRUST_CONSENT_UNKNOWN_CONSTANT = -1;
@@ -391,14 +391,14 @@ public final class OneTrustInterceptor implements ConsentInterceptor {
     public interface OneTrustConsentChecker{
         /**
          * Analogous to {@link OTPublishersHeadlessSDK#getConsentStatusForGroupId}
-         * @param optanonGroupId Category ID (eg. C0001) and the method will return the current consent status (integer value)
+         * @param customGroupId Category ID (eg. C0001) and the method will return the current consent status (integer value)
          * @return
          *      1 = Consent is given
          *      0 = Consent is not given
          *      -1 = Consent has not been collected (The SDK is not initialized OR there are no SDKs associated to this category)
 
          */
-        int getConsentStatusForGroupId(String optanonGroupId);
+        int getConsentStatusForGroupId(String customGroupId);
     }
 
 }
