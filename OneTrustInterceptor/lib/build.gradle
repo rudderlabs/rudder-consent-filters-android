@@ -4,14 +4,14 @@ plugins {
 }
 
 android {
-    namespace 'com.rudderstack.android.adapter.onetrustinterceptor'
+    namespace 'com.rudderstack.android.interceptor.onetrustinterceptor'
     compileSdk 32
 
     defaultConfig {
         minSdk 21
         targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        buildConfigField("String", "VERSION_NAME", "\"${VERSION_NAME}\"")
+
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -48,6 +48,7 @@ dependencies {
     testImplementation 'com.rudderstack.android.sdk:core:1.8.1-SNAPSHOT'
     testImplementation 'com.google.code.gson:gson:2.8.6'
     testImplementation 'org.json:json:20210307'
-
-
 }
+
+//apply from: rootProject.file('gradle/mvn-publish.gradle')
+//apply from: rootProject.file('gradle/codecov.gradle')

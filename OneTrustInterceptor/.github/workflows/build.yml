@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [ 'main' ]
+  pull_request:
+    branches: [ 'main' ]
+    types: [ 'opened', 'reopened', 'edited', 'synchronize' ]
+  workflow_dispatch:
+
+jobs:
+  cancel_previous:
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          workflow_id: ${{ github.event.workflow.id }}
+
+  onetrust-test:
+    needs: cancel_previous
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source branch
+        uses: actions/checkout@v3
+
+      - name: Grant execute permission for onetrust  gradlew
+        run: chmod +x OneTrustInterceptor/gradlew
+
+      - name: cache gradle dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-core-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-core-
+
+      - name: Run Onetrust Tests
+        run: ./OneTrustInterceptor/gradlew lib:test
+
+      - name: Generate coverage report
+        run: ./OneTrustInterceptor/gradlew lib:codeCoverageReport
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
