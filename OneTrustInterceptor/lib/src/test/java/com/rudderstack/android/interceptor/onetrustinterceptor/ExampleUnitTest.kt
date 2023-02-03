@@ -1,4 +1,4 @@
-package com.rudderstack.android.adapter.onetrustinterceptor
+package com.rudderstack.android.interceptor.onetrustinterceptor
 
 import org.junit.Test
 
