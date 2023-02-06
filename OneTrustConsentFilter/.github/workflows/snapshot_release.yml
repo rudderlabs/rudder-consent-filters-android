@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Grant execute permission for gradlew
-        run: chmod +x OneTrustInterceptor/gradlew
+        run: chmod +x OneTrustConsentFilter/gradlew
 
       - name: cache gradle dependencies
         uses: actions/cache@v2
@@ -27,7 +27,7 @@ jobs:
             ${{ runner.os }}-gradle-core-
 
       - name: Publish Onetrust snapshot to sonatype
-        run: ./OneTrustInterceptor/gradlew publishToSonatype
+        run: ./OneTrustConsentFilter/gradlew publishToSonatype
         env:
           SIGNING_KEY_ID: ${{ secrets.SIGNING_KEY_ID }}
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}

@@ -34,7 +34,7 @@ jobs:
           release_type=release
           git fetch origin main --depth=1
           git merge origin/main
-          cd OneTrustInterceptor
+          cd OneTrustConsentFilter
           current_version=$(cat gradle.properties | grep "VERSION_NAME" | cut -d'=' -f2)
           
           npm ci
@@ -59,7 +59,7 @@ jobs:
       - name: Update changelog & bump version
         id: finish-release
         run: |
-          cd OneTrustInterceptor
+          cd OneTrustConsentFilter
           npm ci
           npx standard-version -a --skip.tag
 

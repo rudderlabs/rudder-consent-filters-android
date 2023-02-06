@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.rudderstack.android.interceptor.onetrustinterceptor'
+    namespace 'com.rudderstack.android.consentfilter.onetrustconsentfilter'
     compileSdk 32
 
     defaultConfig {
@@ -45,10 +45,10 @@ dependencies {
     testImplementation "org.powermock:powermock-module-junit4:2.0.9"
     testImplementation "org.powermock:powermock-api-mockito2:2.0.9"
     testImplementation 'com.onetrust.cmp:native-sdk:202212.1.0.0'
-    testImplementation 'com.rudderstack.android.sdk:core:1.8.1-SNAPSHOT'
+    testImplementation 'com.rudderstack.android.sdk:core:1.9.0-SNAPSHOT'
     testImplementation 'com.google.code.gson:gson:2.8.6'
     testImplementation 'org.json:json:20210307'
 }
 
-//apply from: rootProject.file('gradle/mvn-publish.gradle')
-//apply from: rootProject.file('gradle/codecov.gradle')
+apply from: rootProject.file('gradle/mvn-publish.gradle')
+apply from: rootProject.file('gradle/codecov.gradle')
