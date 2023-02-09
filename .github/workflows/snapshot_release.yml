@@ -27,7 +27,7 @@ jobs:
             ${{ runner.os }}-gradle-core-
 
       - name: Publish Onetrust snapshot to sonatype
-        run: ./OneTrustConsentFilter/gradlew publishToSonatype
+        run: cd OneTrustConsentFilter && ./gradlew publishToSonatype
         env:
           SIGNING_KEY_ID: ${{ secrets.SIGNING_KEY_ID }}
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
