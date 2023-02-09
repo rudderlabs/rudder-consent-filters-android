@@ -17,7 +17,7 @@ jobs:
         with:
           workflow_id: ${{ github.event.workflow.id }}
 
-  onetrust-test:
+  onetrust-consent-filter-test:
     needs: cancel_previous
     runs-on: ubuntu-latest
 
@@ -25,8 +25,11 @@ jobs:
       - name: Checkout source branch
         uses: actions/checkout@v3
 
+      - name: Move Inside OneTrust
+        uses: cd OneTrustConsentFilter
+
       - name: Grant execute permission for onetrust  gradlew
-        run: chmod +x OneTrustConsentFilter/gradlew
+        run:  chmod +x gradlew
 
       - name: cache gradle dependencies
         uses: actions/cache@v3
@@ -39,10 +42,10 @@ jobs:
             ${{ runner.os }}-gradle-core-
 
       - name: Run Onetrust Tests
-        run: ./OneTrustConsentFilter/gradlew lib:test
+        run: ./gradlew lib:test
 
       - name: Generate coverage report
-        run: ./OneTrustConsentFilter/gradlew lib:codeCoverageReport
+        run: ./gradlew lib:codeCoverageReport
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
