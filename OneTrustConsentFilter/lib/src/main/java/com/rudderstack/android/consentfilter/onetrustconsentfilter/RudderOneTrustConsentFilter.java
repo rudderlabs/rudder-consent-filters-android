@@ -1,6 +1,5 @@
 package com.rudderstack.android.consentfilter.onetrustconsentfilter;
 
-import android.util.Pair;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -8,8 +7,6 @@ import androidx.annotation.Nullable;
 import com.onetrust.otpublishers.headless.Public.OTPublishersHeadlessSDK;
 import com.rudderstack.android.sdk.core.RudderServerDestination;
 import com.rudderstack.android.sdk.core.consent.RudderConsentFilter;
-
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,7 +17,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 
 public final class RudderOneTrustConsentFilter implements RudderConsentFilter {
 
@@ -64,23 +60,23 @@ public final class RudderOneTrustConsentFilter implements RudderConsentFilter {
         Map<String, String> categoryNameIdMap = new HashMap<>();
         for (int i = 0; i < jsonArraySize; i++) {
             JSONObject categoryJSONObject = getJSONObjectFromArrayForPosition(categoryGroupArray, i);
-            Pair<String, String> categoryNameIdPair = getNameIdPairForCategoryGroupJson(categoryJSONObject);
+            CategoryNameIdPair categoryNameIdPair = getNameIdPairForCategoryGroupJson(categoryJSONObject);
             if (categoryNameIdPair != null) {
-                categoryNameIdMap.put(categoryNameIdPair.first, categoryNameIdPair.second);
+                categoryNameIdMap.put(categoryNameIdPair.name, categoryNameIdPair.id);
             }
         }
         return categoryNameIdMap;
     }
 
     private @Nullable
-    Pair<String, String> getNameIdPairForCategoryGroupJson(JSONObject categoryJSONObject) {
+    CategoryNameIdPair getNameIdPairForCategoryGroupJson(JSONObject categoryJSONObject) {
         String categoryName = getStringFromJsonObject(categoryJSONObject, ONE_TRUST_CATEGORY_NAME_JSON_KEY);
         if (categoryName == null)
             return null;
         String categoryId = getStringFromJsonObject(categoryJSONObject, ONE_TRUST_CATEGORY_ID_JSON_KEY);
         if (categoryId == null)
             return null;
-        return new Pair<>(categoryName, categoryId);
+        return new CategoryNameIdPair(categoryName, categoryId);
     }
 
     private @Nullable
@@ -229,6 +225,16 @@ public final class RudderOneTrustConsentFilter implements RudderConsentFilter {
          * -1 = Consent has not been collected (The SDK is not initialized OR there are no SDKs associated to this category)
          */
         int getConsentStatusForGroupId(String customGroupId);
+    }
+
+    private static class CategoryNameIdPair{
+        CategoryNameIdPair(String name, String id) {
+            this.name = name;
+            this.id = id;
+        }
+
+        final String name;
+        final String id;
     }
 
 }
