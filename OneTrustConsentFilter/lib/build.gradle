@@ -1,17 +1,16 @@
 plugins {
     id 'com.android.library'
-    id 'org.jetbrains.kotlin.android'
 }
 
 android {
     namespace 'com.rudderstack.android.consentfilter.onetrustconsentfilter'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
-        minSdk 21
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        minSdk 19
+        targetSdk 33
+        buildConfigField("String", "VERSION_NAME", "\"${VERSION_NAME}\"")
+
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -26,12 +25,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
 }
 
 dependencies {
+
+    implementation 'androidx.annotation:annotation:1.5.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
@@ -48,6 +46,7 @@ dependencies {
     testImplementation 'com.rudderstack.android.sdk:core:1.9.0-SNAPSHOT'
     testImplementation 'com.google.code.gson:gson:2.8.6'
     testImplementation 'org.json:json:20210307'
-
-
 }
+
+apply from: rootProject.file('gradle/mvn-publish.gradle')
+apply from: rootProject.file('gradle/codecov.gradle')
