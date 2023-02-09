@@ -1,11 +1,15 @@
 package com.rudderstack.android.consentfilter.onetrustconsentfilter;
 
+import android.util.Pair;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import com.onetrust.otpublishers.headless.Public.OTPublishersHeadlessSDK;
 import com.rudderstack.android.sdk.core.RudderServerDestination;
 import com.rudderstack.android.sdk.core.consent.RudderConsentFilter;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -17,7 +21,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import kotlin.Pair;
 
 public final class RudderOneTrustConsentFilter implements RudderConsentFilter {
 
@@ -31,21 +34,21 @@ public final class RudderOneTrustConsentFilter implements RudderConsentFilter {
 
     private Map<String, String> oneTrustCategoryIdNameMapping;
 
-    private @NotNull
+    private @NonNull
     OneTrustConsentChecker oneTrustConsentChecker;
 
 
-    public RudderOneTrustConsentFilter(@NotNull OTPublishersHeadlessSDK oneTrustSdk) {
+    public RudderOneTrustConsentFilter(@NonNull OTPublishersHeadlessSDK oneTrustSdk) {
         updateOneTrustCategoryNameToIdMapping(oneTrustSdk);
         oneTrustConsentChecker = oneTrustSdk::getConsentStatusForGroupId;
     }
 
 
-    public void setOneTrustConsentChecker(@NotNull OneTrustConsentChecker oneTrustConsentChecker) {
+    public void setOneTrustConsentChecker(@NonNull OneTrustConsentChecker oneTrustConsentChecker) {
         this.oneTrustConsentChecker = oneTrustConsentChecker;
     }
 
-    private void updateOneTrustCategoryNameToIdMapping(@NotNull OTPublishersHeadlessSDK oneTrustSdk) {
+    private void updateOneTrustCategoryNameToIdMapping(@NonNull OTPublishersHeadlessSDK oneTrustSdk) {
         JSONObject oneTrustSdkDomainGroupData = oneTrustSdk.getDomainGroupData();
         JSONArray categoryGroupArray = parseGroupArrayFromDomainGroupJSONObject(oneTrustSdkDomainGroupData);
         if (categoryGroupArray == null) {
@@ -55,7 +58,7 @@ public final class RudderOneTrustConsentFilter implements RudderConsentFilter {
         oneTrustCategoryIdNameMapping = generateOneTrustCategoryNameToIdMappingFromCategoryJsonArray(categoryGroupArray);
     }
 
-    private @NotNull
+    private @NonNull
     Map<String, String> generateOneTrustCategoryNameToIdMappingFromCategoryJsonArray(JSONArray categoryGroupArray) {
         int jsonArraySize = categoryGroupArray.length();
         Map<String, String> categoryNameIdMap = new HashMap<>();
@@ -63,7 +66,7 @@ public final class RudderOneTrustConsentFilter implements RudderConsentFilter {
             JSONObject categoryJSONObject = getJSONObjectFromArrayForPosition(categoryGroupArray, i);
             Pair<String, String> categoryNameIdPair = getNameIdPairForCategoryGroupJson(categoryJSONObject);
             if (categoryNameIdPair != null) {
-                categoryNameIdMap.put(categoryNameIdPair.getFirst(), categoryNameIdPair.getSecond());
+                categoryNameIdMap.put(categoryNameIdPair.first, categoryNameIdPair.second);
             }
         }
         return categoryNameIdMap;
@@ -173,7 +176,7 @@ public final class RudderOneTrustConsentFilter implements RudderConsentFilter {
     }
 
 
-    private @NotNull
+    private @NonNull
     List<String> getOneTrustCookieCategoriesFromConfigObject(Object destinationConfig) {
         if (!(destinationConfig instanceof Map)) {
             return Collections.emptyList();
@@ -190,12 +193,12 @@ public final class RudderOneTrustConsentFilter implements RudderConsentFilter {
 
     }
 
-    private @NotNull
+    private @NonNull
     List<String> collectCookieCategoriesFromCategoriesArray(Object[] oneTrustCookieCategoriesList) {
         return collectCookieCategoriesFromCategoriesList(Arrays.asList(oneTrustCookieCategoriesList));
     }
 
-    private @NotNull
+    private @NonNull
     List<String> collectCookieCategoriesFromCategoriesList(Iterable oneTrustCookieCategoriesList) {
         final List<String> cookieCategoriesList = new ArrayList<>();
         for (Object oneTrustCategoryMap : oneTrustCookieCategoriesList
