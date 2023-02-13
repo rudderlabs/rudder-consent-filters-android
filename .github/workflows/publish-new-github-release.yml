@@ -57,7 +57,7 @@ jobs:
           DEBUG=conventional-github-releaser npx conventional-github-releaser -p angular
 
       - name: Delete release branch
-        uses: koj-co/delete-merged-action@main
+        uses: koj-co/delete-merged-action@master
         if: startsWith(github.event.pull_request.head.ref, 'release/')
         with:
           branches: 'release/*'
