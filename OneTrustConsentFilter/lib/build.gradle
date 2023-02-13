@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    namespace 'com.rudderstack.android.consentfilter.onetrustconsentfilter'
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 19
+        targetSdk 33
+        buildConfigField("String", "VERSION_NAME", "\"${VERSION_NAME}\"")
+
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.annotation:annotation:1.5.0'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    compileOnly 'com.onetrust.cmp:native-sdk:202212.1.0.0'
+    compileOnly 'com.rudderstack.android.sdk:core:1.9.0-SNAPSHOT'
+
+    testImplementation "org.hamcrest:hamcrest:2.2"
+    testImplementation "org.mockito:mockito-core:3.11.2"
+    testImplementation "org.powermock:powermock-core:2.0.9"
+    testImplementation "org.powermock:powermock-module-junit4:2.0.9"
+    testImplementation "org.powermock:powermock-api-mockito2:2.0.9"
+    testImplementation 'com.onetrust.cmp:native-sdk:202212.1.0.0'
+    testImplementation 'com.rudderstack.android.sdk:core:1.9.0-SNAPSHOT'
+    testImplementation 'com.google.code.gson:gson:2.8.6'
+    testImplementation 'org.json:json:20210307'
+}
+
+apply from: rootProject.file('gradle/mvn-publish.gradle')
+apply from: rootProject.file('gradle/codecov.gradle')
