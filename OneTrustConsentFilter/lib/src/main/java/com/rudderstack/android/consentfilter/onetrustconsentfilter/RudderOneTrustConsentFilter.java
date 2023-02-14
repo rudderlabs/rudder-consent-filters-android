@@ -6,19 +6,21 @@ import androidx.annotation.Nullable;
 
 import com.onetrust.otpublishers.headless.Public.OTPublishersHeadlessSDK;
 import com.rudderstack.android.sdk.core.RudderServerDestination;
-import com.rudderstack.android.sdk.core.consent.RudderConsentFilter;
+import com.rudderstack.android.sdk.core.consent.RudderConsentFilterWithCloudIntegration;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public final class RudderOneTrustConsentFilter implements RudderConsentFilter {
+public final class RudderOneTrustConsentFilter implements RudderConsentFilterWithCloudIntegration {
 
     private static final String ONE_TRUST_COOKIE_CATEGORIES_JSON_KEY = "oneTrustCookieCategories";
     private static final String ONE_TRUST_COOKIE_INDIVIDUAL_CATEGORY_JSON_KEY = "oneTrustCookieCategory";
@@ -51,7 +53,8 @@ public final class RudderOneTrustConsentFilter implements RudderConsentFilter {
             oneTrustCategoryIdNameMapping = Collections.emptyMap();
             return;
         }
-        oneTrustCategoryIdNameMapping = generateOneTrustCategoryNameToIdMappingFromCategoryJsonArray(categoryGroupArray);
+        oneTrustCategoryIdNameMapping =
+                generateOneTrustCategoryNameToIdMappingFromCategoryJsonArray(categoryGroupArray);
     }
 
     private @NonNull
@@ -138,14 +141,14 @@ public final class RudderOneTrustConsentFilter implements RudderConsentFilter {
 
     private boolean areAllCategoriesConsented(List<String> categoryNameOrIdList) {
         for (String categoryNameOrId : categoryNameOrIdList) {
-            if (!isCategoryNameOrIdConsented(categoryNameOrId)) {
+            if ( Boolean.FALSE.equals(isCategoryNameOrIdConsented(categoryNameOrId))) {
                 return false;
             }
         }
         return true;
     }
 
-    private boolean isCategoryNameOrIdConsented(String categoryNameOrId) {
+    private @Nullable Boolean isCategoryNameOrIdConsented(String categoryNameOrId) {
         int consentStatus = getConsentStatusForCategoryId(categoryNameOrId); //consider as id
         if (consentStatus == ONE_TRUST_CONSENT_UNKNOWN_CONSTANT) { //consider as name
             consentStatus = getConsentStatusForCategoryName(categoryNameOrId);
@@ -154,9 +157,9 @@ public final class RudderOneTrustConsentFilter implements RudderConsentFilter {
         switch (consentStatus) {
             case ONE_TRUST_CONSENT_NOT_GIVEN_CONSTANT:
                 return false;
-            case ONE_TRUST_CONSENT_GIVEN_CONSTANT:
+            case ONE_TRUST_CONSENT_GIVEN_CONSTANT: return true;
             default:
-                return true;
+                return null;
         }
     }
 
@@ -211,6 +214,19 @@ public final class RudderOneTrustConsentFilter implements RudderConsentFilter {
                 cookieCategoriesList.add((String) cookieCategory);
             }
         }
+    }
+
+    @Override
+    public Map<String, Boolean> getConsentCategoriesMap() {
+        Collection<String> oneTrustCategoryIds = oneTrustCategoryIdNameMapping.values();
+        Map<String, Boolean> categoryConsentMap = new HashMap<>();
+        for (String categoryId: oneTrustCategoryIds) {
+            Boolean consentForId = isCategoryNameOrIdConsented(categoryId);
+            if(consentForId != null) {
+                categoryConsentMap.put(categoryId, consentForId);
+            }
+        }
+        return categoryConsentMap;
     }
 
 

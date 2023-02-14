@@ -10,6 +10,8 @@ import com.rudderstack.android.sdk.core.RudderMessage;
 import com.rudderstack.android.sdk.core.RudderMessageBuilder;
 import com.rudderstack.android.sdk.core.RudderOption;
 import com.rudderstack.android.sdk.core.RudderServerConfigSource;
+import com.rudderstack.android.sdk.core.RudderServerDestination;
+import com.rudderstack.android.sdk.core.consent.RudderConsentFilterWithCloudIntegration;
 
 import org.json.JSONObject;
 import org.junit.Before;
@@ -109,7 +111,7 @@ public class RudderOneTrustConsentFilterTest {
     // 2Kb0uWtwcvl1mUv1IBc5a8YhuM6, 2KX4GMCpQiCfjVoTwnF1ZsWaJlN,
     //2KX4GMCpQiCfjVoTwnF1ZsWaJlQ
     @Test
-    public void testConsentFilter() {
+    public void testFilterConsentedDestinations() {
         Map<String, Boolean> consentedMap = rudderOneTrustConsentFilter.filterConsentedDestinations(rudderServerConfigSource.getDestinations());
         assertThat(consentedMap, allOf(
                 hasEntry("Amplitude", true),
@@ -120,6 +122,26 @@ public class RudderOneTrustConsentFilterTest {
                 hasEntry("Google Analytics", false),
                 hasEntry("Google Analytics 2", false)
         ));
+    }
+
+    @Test
+    public void testGetConsentCategoriesMap(){
+        rudderOneTrustConsentFilter = new RudderOneTrustConsentFilter(otPublishersHeadlessSDK);
+        Map<String, Boolean> consentedCategoriesMap =
+                rudderOneTrustConsentFilter.getConsentCategoriesMap();
+        assertThat(consentedCategoriesMap, allOf(
+                hasEntry("cat_id_1", true),
+                hasEntry("cat_id_2", true),
+                hasEntry("cat_id_3", true),
+                hasEntry("cat_id_4", true),
+                hasEntry("cat_id_5", true),
+                hasEntry("cat_id_6", false),
+                hasEntry("cat_id_7", false),
+                hasEntry("cat_id_8", false),
+                hasEntry("cat_id_9", false),
+                hasEntry("cat_id_10", false)
+        ));
+
     }
 
 
