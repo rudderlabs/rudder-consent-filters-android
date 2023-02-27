@@ -17,7 +17,7 @@ jobs:
         run: chmod +x OneTrustConsentFilter/gradlew
 
       - name: cache gradle dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             ~/.gradle/caches
