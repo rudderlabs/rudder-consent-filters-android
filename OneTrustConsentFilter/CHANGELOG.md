@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/rudderlabs/rudder-consent-filters-android/compare/v1.0.0...v1.1.0) (2023-03-02)
+
+
+### Features
+
+* cloud mode consent management ([7e7f8ef](https://github.com/rudderlabs/rudder-consent-filters-android/commit/7e7f8efdcfdc42d16d23b3aa0f30f488997e079b))
+
 ## 1.0.0 (2023-02-13)
 
 
