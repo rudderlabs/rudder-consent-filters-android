@@ -35,7 +35,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     compileOnly 'com.onetrust.cmp:native-sdk:202301.2.0.0'
-    compileOnly 'com.rudderstack.android.sdk:core:1.10.0-SNAPSHOT'
+    compileOnly 'com.rudderstack.android.sdk:core:1.12.0'
 
     testImplementation "org.hamcrest:hamcrest:2.2"
     testImplementation "org.mockito:mockito-core:3.11.2"
@@ -43,7 +43,7 @@ dependencies {
     testImplementation "org.powermock:powermock-module-junit4:2.0.9"
     testImplementation "org.powermock:powermock-api-mockito2:2.0.9"
     testImplementation 'com.onetrust.cmp:native-sdk:202301.2.0.0'
-    testImplementation 'com.rudderstack.android.sdk:core:1.10.0-SNAPSHOT'
+    testImplementation 'com.rudderstack.android.sdk:core:1.12.0'
     testImplementation 'com.google.code.gson:gson:2.8.6'
     testImplementation 'org.json:json:20210307'
 }
