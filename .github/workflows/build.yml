@@ -8,9 +8,14 @@ on:
     types: [ 'opened', 'reopened', 'edited', 'synchronize' ]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   cancel_previous:
 
+    permissions:
+      actions: write  # for styfle/cancel-workflow-action to cancel/stop running workflows
     runs-on: ubuntu-latest
     steps:
       - name: Harden the runner (Audit all outbound calls)
