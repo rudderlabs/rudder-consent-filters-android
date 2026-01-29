@@ -81,11 +81,20 @@ jobs:
         run: |
           cd OneTrustConsentFilter
           npm ci
-          npx standard-version -a --skip.tag
+          npx standard-version -a --skip.tag --skip.commit
+          new_version=$(cat gradle.properties | grep "VERSION_NAME" | cut -d'=' -f2)
+          echo "new_version=$new_version" >> $GITHUB_OUTPUT
 
-      - name: Push new version in release branch
-        run: |
-          git push
+      - name: Create verified commit via GitHub API
+        uses: ryancyq/github-signed-commit@e9f3b28c80da7be66d24b8f501a5abe82a6b855f # v1.2.0
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+        with:
+          branch-name: ${{ steps.create-release.outputs.branch_name }}
+          commit-message: 'chore(release): v${{ steps.finish-release.outputs.new_version }}'
+          files: |
+            OneTrustConsentFilter/gradle.properties
+            OneTrustConsentFilter/CHANGELOG.md
 
       - name: Create pull request into main
         uses: repo-sync/pull-request@7e79a9f5dc3ad0ce53138f01df2fad14a04831c5 # v2.12.1
