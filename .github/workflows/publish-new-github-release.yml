@@ -24,13 +24,16 @@ jobs:
 
       - name: Extract version from branch name (for release branches)
         id: extract-version
+        env:
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          INPUT_VERSION: ${{ github.event.inputs.version }}
         run: |
-          BRANCH_NAME="${{ github.event.pull_request.head.ref }}"
-          if [ "$BRANCH_NAME" = "" ]; then BRANCH_NAME=${{ github.event.inputs.version }}
+          BRANCH_NAME="$PR_HEAD_REF"
+          if [ "$BRANCH_NAME" = "" ]; then BRANCH_NAME="$INPUT_VERSION"
           fi
           echo "BRANCH_NAME considered: ${BRANCH_NAME}"
           VERSION=${BRANCH_NAME#release/}
-          
+
           echo "release_version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Checkout
@@ -55,10 +58,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CONVENTIONAL_GITHUB_RELEASER_TOKEN: ${{ secrets.PAT }}
+          RELEASE_VERSION: ${{ steps.extract-version.outputs.release_version }}
         run: |
           cd OneTrustConsentFilter
-          git tag -a v${{ steps.extract-version.outputs.release_version }} -m "chore: release v${{ steps.extract-version.outputs.release_version }}"
-          git push origin refs/tags/v${{ steps.extract-version.outputs.release_version }}
+          git tag -a "v${RELEASE_VERSION}" -m "chore: release v${RELEASE_VERSION}"
+          git push origin "refs/tags/v${RELEASE_VERSION}"
           DEBUG=conventional-github-releaser npx conventional-github-releaser -p angular
 
       - name: Delete release branch
