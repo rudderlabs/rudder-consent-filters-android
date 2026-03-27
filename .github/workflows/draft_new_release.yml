@@ -27,6 +27,7 @@ jobs:
           private-key: ${{ secrets.RELEASE_PRIVATE_KEY }}
           permission-contents: write # to create commits and push changes
           permission-pull-requests: write # to create and update PRs
+          permission-members: read # to resolve team reviewers
 
       - name: Checkout source branch
         uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
