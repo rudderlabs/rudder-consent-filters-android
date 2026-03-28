@@ -11,6 +11,9 @@ on:
       version:
         required: true
 
+permissions:
+  contents: read
+
 jobs:
   release:
     permissions:
