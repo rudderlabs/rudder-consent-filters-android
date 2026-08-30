@@ -30,7 +30,7 @@ jobs:
           permission-members: read # to resolve team reviewers
 
       - name: Checkout source branch
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           token: ${{ steps.generate-token.outputs.token }}
           fetch-depth: 0
